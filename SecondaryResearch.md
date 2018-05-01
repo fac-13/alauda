@@ -1,4 +1,5 @@
-Secondary Research
+## Secondary Research
+
 CONTEXT
 Once you know your design challenge, it’s time to start learning about its broader context. You can bone up quickly by exploring the most recent news in the field. Use the Internet, newspapers, magazines, or journals to know what’s new.
 Morning anxiety
