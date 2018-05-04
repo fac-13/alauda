@@ -1,10 +1,10 @@
 # Allauda / Larker / Larky / Lark
-## Morning Notifications Progressive Web App.
+## Morning Notifications Progressive Web App
 ### User Research Notes
 
-**User testing of the first prototype script**
-**_Date: 04/05/2018_**
-Recruited users: Jayda Kadir, Andy Punter
+**User testing of the first prototype script**  
+**_Date: 04/05/2018_**  
+Recruited users: Jayda Kadir, Andy Punter  
 Approached users: Mother of the Bride staff, Desco staff
 
 **_Instructions to testers:_**
@@ -14,15 +14,15 @@ Approached users: Mother of the Bride staff, Desco staff
 - Record all problematic situations and unexpected uses of the app;
 - Do not lead the user, do not show them how to use the app;
 
-Script.
+## Script
 
-Introduction
+### Introduction
 
-Thank you for helping us today. Just so you know, we will be observing the session today and making records of your interactions with the app. My name is Ivi, I’m a developer on the application, the application we're working on requires you to complete your profile and will send you daily morning notifications consisting of soundtracks you might like as well as collections of random images you might find entertaining. As a bonus (humorous) you will also be receiving collections of sounds and images you might absolutely hate. You do not have to look at the latter.
+_Thank you for helping us today. Just so you know, we will be observing the session today and making records of your interactions with the app. My name is Ivi, I’m a developer on the application, the application we're working on requires you to complete your profile and will send you daily morning notifications consisting of soundtracks you might like as well as collections of random images you might find entertaining. As a bonus (humorous) you will also be receiving collections of sounds and images you might absolutely hate. You do not have to look at the latter._
 
-Today we are asking you to try the very first prototype of our application. The purpose of this session is to see whether the app is easy to navigate and its structure is fit for purpose. To reiterate: this is not a final, coded product, this is the first prototype, some of its features are not yet built.
+_Today we are asking you to try the very first prototype of our application. The purpose of this session is to see whether the app is easy to navigate and its structure is fit for purpose. To reiterate: this is not a final, coded product, this is the first prototype, some of its features are not yet built._
 
-One thing that is really important to remember is that we are testing the application, not you! You can’t do anything wrong during today’s session. We encourage you to ‘click around.’ You should also not worry about breaking the app.
+_One thing that is really important to remember is that we are testing the application, not you! You can’t do anything wrong during today’s session. We encourage you to ‘click around.’ You should also not worry about breaking the app._
 
 The summary of the key points describing today’s session is as follows:
 Do not worry about making mistakes;
