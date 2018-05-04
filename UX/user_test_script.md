@@ -1,18 +1,18 @@
-#Allauda / Larker / Larky / Lark
-##Morning Notifications Progressive Web App.
-###User Research Notes
+# Allauda / Larker / Larky / Lark
+## Morning Notifications Progressive Web App.
+### User Research Notes
 
 **User testing of the first prototype script**
 **_Date: 04/05/2018_**
 Recruited users: Jayda Kadir, Andy Punter
 Approached users: Mother of the Bride staff, Desco staff
 
-Instructions to testers:
+**_Instructions to testers:_**
 
-Make sure you make notes (using pen and paper); or you can also video/audio record the session with the candidate’s permission;
-Pay attention to strong, emotional words used;
-Record all problematic situations and unexpected uses of the app;
-Do not lead the user, do not show them how to use the app;
+- Make sure you make notes (using pen and paper); or you can also video/audio record the session with the candidate’s permission;
+- Pay attention to strong, emotional words used;
+- Record all problematic situations and unexpected uses of the app;
+- Do not lead the user, do not show them how to use the app;
 
 Script.
 
