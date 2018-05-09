@@ -23,18 +23,14 @@ var clearContents = function () {
   while (main.firstChild) {
     main.removeChild(main.firstChild);
   }
+}
 
-  /**
-   * Generates the random gift page building all necessary elements
-   */
-  var generateGiftPage = function () {
-    var hello = document.createElement('p');
-    var helloText = document.createTextNode('I am the gift page');
-    hello.appendChild(helloText);
-    main.appendChild(hello);
-  }
-
-
-
-
-
+/**
+ * Generates the random gift page building all necessary elements
+ */
+var generateGiftPage = function () {
+  var hello = document.createElement('p');
+  var helloText = document.createTextNode('I am the gift page');
+  hello.appendChild(helloText);
+  main.appendChild(hello);
+}
