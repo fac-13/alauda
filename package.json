@@ -1,0 +1,29 @@
+{
+  "name": "allauda",
+  "version": "1.0.0",
+  "description": "PWA morning app",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-13/allauda.git"
+  },
+  "keywords": ["PWA", "morning"],
+  "author": "Katia, Giulia, Parissa, Ivana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-13/allauda/issues"
+  },
+  "homepage": "https://github.com/fac-13/allauda#readme",
+  "dependencies": {
+    "env2": "^2.2.0",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
