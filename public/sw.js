@@ -12,18 +12,27 @@ const staticAssets = [
   './images/icons/icon-512x512.png', 
 ];
 
-
+/**
+ * On install cache the static assets
+ */
 self.addEventListener('install', async event => {
   const cache = await caches.open('static');
   cache.addAll(staticAssets);
 })
 
+/**
+ * Intercepts all fetch requests and respond with the cached content
+ */
 self.addEventListener('fetch', event => {
   const req = event.request;
   console.log("Req:", req);
   event.respondWith(cacheFirst(req));
 });
 
+
+/**
+ * Checks if there is a match in the cache, if so returns the cached content, otherwise makes a network request
+ */
 async function cacheFirst(req) {
   const cachedResponse = await caches.match(req);
   return cachedResponse || fetch(req);

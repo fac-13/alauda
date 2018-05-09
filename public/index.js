@@ -2,6 +2,9 @@
 var main = document.querySelector('main');
 var buttonTryMe = document.getElementById('button__tryme');
 
+/**
+ * Checks if there is a service worker and registers it
+ */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('/sw.js')
@@ -19,7 +22,6 @@ buttonTryMe.addEventListener('click', function () {
 var clearContents = function () {
     while (main.firstChild) {
         main.removeChild(main.firstChild);
-    }
 }
 
 /**
