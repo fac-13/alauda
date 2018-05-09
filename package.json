@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/fac-13/allauda.git"
   },
-  "keywords": ["PWA", "morning"],
+  "keywords": [
+    "PWA",
+    "morning"
+  ],
   "author": "Katia, Giulia, Parissa, Ivana",
   "license": "ISC",
   "bugs": {
@@ -24,6 +27,7 @@
     "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "supertest": "^3.0.0"
   }
 }
