@@ -10,11 +10,10 @@ let content = localStorage.getItem('content')
  * Check if there is a service worker and register it
  */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function() {
+  navigator.serviceWorker.register('/sw.js').then(function () {
     console.log('Service Worker Registered');
   });
 }
-
 
 /**
  * Clear the content of index.html by removing the children of <main>
@@ -29,13 +28,13 @@ const clearContent = () => {
  * Generate the home page 
  */
 const generateHomePage = () => {
-  clearContent(); 
-  homePageHTML(); 
-  const tryMeButton = document.getElementById('button__tryMe'); 
+  clearContent();
+  homePageHTML();
+  const tryMeButton = document.getElementById('button__tryMe');
   tryMeButton.addEventListener('click', () => {
-    fetchContent(); 
+    fetchContent();
     generateRandomGiftPage();
-}); 
+  });
 }
 
 /**
@@ -43,6 +42,7 @@ const generateHomePage = () => {
  */
 const homePageHTML = () => {
   return main.innerHTML = `
+  <h1>Allauda</h1>
   <button id="button__tryMe">Try Me</button>
   `
 }
@@ -52,10 +52,10 @@ const homePageHTML = () => {
  */
 const generateRandomGiftPage = () => {
   clearContent();
-  randomGiftHTML(); 
-  const goBackButton = document.getElementById('button__goBack'); 
-  goBackButton.addEventListener('click', generateHomePage); 
-  const randomGift = document.getElementById('button__randomGift'); 
+  randomGiftHTML();
+  const goBackButton = document.getElementById('button__goBack');
+  goBackButton.addEventListener('click', generateHomePage);
+  const randomGift = document.getElementById('button__randomGift');
   randomGift.addEventListener('click', checkOffline);
 }
 
@@ -65,9 +65,9 @@ const generateRandomGiftPage = () => {
 const randomGiftHTML = () => {
   return main.innerHTML = `
   <nav>
-  <button id="button__goBack">
-  <i class="fas fa-arrow-circle-left"></i>
-  </button>
+    <button id="button__goBack">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
   </nav>
   <p>I am the gift page</p>
   <button id="button__randomGift">Gift</button>
@@ -79,9 +79,9 @@ const randomGiftHTML = () => {
  */
 const generateContentPage = () => {
   clearContent();
-  contentPageHTML(); 
-  const goBackButton = document.getElementById('button__goBack'); 
-  goBackButton.addEventListener('click', generateRandomGiftPage); 
+  contentPageHTML();
+  const goBackButton = document.getElementById('button__goBack');
+  goBackButton.addEventListener('click', generateRandomGiftPage);
 };
 
 /**
@@ -90,9 +90,9 @@ const generateContentPage = () => {
 const contentPageHTML = () => {
   return main.innerHTML = `
   <nav>
-  <button id="button__goBack">
-  <i class="fas fa-arrow-circle-left"></i>
-  </button>
+    <button id="button__goBack">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
   </nav>
   <p>This is the content page</p>
   <section></section>
@@ -131,7 +131,7 @@ const fetchContent = () => {
     .then(response => {
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       content = data;
       storeContent(content);
     });
@@ -150,14 +150,14 @@ const storeContent = () => {
  * @param  {} data - content from the server with combined response from all API calls
  * render content to content page
  */
-const renderContent = data => {
-  
-  data.placeholder.map(el => {
-    const section = document.querySelector('section'); 
+const renderContent = (data) => {
+
+  data.placeholder.map((el) => {
+    const section = document.querySelector('section');
     const giphy = `<img src=${el} alt="Giphy" height="200" />`
-    section.insertAdjacentHTML('beforeend', giphy); 
+    section.insertAdjacentHTML('beforeend', giphy);
   })
 };
 
-window.addEventListener('load', generateHomePage()); 
+window.addEventListener('load', generateHomePage());
 
