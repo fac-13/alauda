@@ -33,11 +33,23 @@ var generateGiftPage = function () {
   var helloText = document.createTextNode('I am the gift page');
   hello.appendChild(helloText);
   main.appendChild(hello);
-  var giftButton = document.createElement('BUTTON');
-  var giftButtonText = document.createTextNode('gift');
-  giftButton.appendChild(giftButtonText);
-  main.appendChild(giftButton)
-  giftButton.addEventListener('click', checkOffline)
+  var tryMeGiftButton = document.createElement('button');
+  var tryMeGiftButtonText = document.createTextNode('gift');
+  tryMeGiftButton.appendChild(tryMeGiftButtonText);
+  main.appendChild(tryMeGiftButton)
+  tryMeGiftButton.addEventListener('click', checkOffline)
+}
+
+
+/**
+ * Generate content page and ...
+ */
+var generateContentPage = function () {
+  clearContents();
+  var content = document.createElement('div');
+  var contentText = document.createTextNode('This is the content page');
+  content.appendChild(contentText);
+  main.appendChild(content);
 }
 
 /**
@@ -55,5 +67,7 @@ var checkOffline = function () {
     setTimeout(() => {
       offlineMessage.close();
     }, 4000);
+  } else {
+    generateContentPage()
   }
 }
