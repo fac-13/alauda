@@ -12,7 +12,6 @@ if ('serviceWorker' in navigator) {
 }
 
 buttonTryMe.addEventListener('click', function () {
-  clearContents();
   generateGiftPage();
 });
 
@@ -26,20 +25,29 @@ var clearContents = function () {
 }
 
 /**
- * Generate the random gift page building all necessary elements
+ * Generate the random gift page 
  */
 var generateGiftPage = function () {
-  var hello = document.createElement('p');
-  var helloText = document.createTextNode('I am the gift page');
-  hello.appendChild(helloText);
-  main.appendChild(hello);
-  var tryMeGiftButton = document.createElement('button');
-  var tryMeGiftButtonText = document.createTextNode('gift');
-  tryMeGiftButton.appendChild(tryMeGiftButtonText);
-  main.appendChild(tryMeGiftButton)
-  tryMeGiftButton.addEventListener('click', checkOffline)
+  clearContents();
+  randomGiftHTML(); 
+  var goBackButton = document.getElementById('goBackButton'); 
+  goBackButton.addEventListener('click', generateHomePage); 
+  var randomGift = document.getElementById('randomGift'); 
+  randomGift.addEventListener('click', checkOffline);
 }
 
+/**
+ * Create the elements of the random gift page
+ */
+var randomGiftHTML = function(){
+  return main.innerHTML = `
+  <button id="goBackButton">
+  <i class="fas fa-arrow-circle-left"></i>
+  </button>
+  <p>I am the gift page</p>
+  <button id="randomGift">Gift</button>
+  `
+}
 
 /**
  * Generate content page and ...
