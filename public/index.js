@@ -33,4 +33,19 @@ var generateGiftPage = function () {
   var helloText = document.createTextNode('I am the gift page');
   hello.appendChild(helloText);
   main.appendChild(hello);
+  var giftButton = document.createElement('BUTTON');
+  var giftButtonText = document.createTextNode('gift');
+  giftButton.appendChild(giftButtonText);
+  main.appendChild(giftButton)
+
+  giftButton.addEventListener('click', checkOffline)
+}
+
+var checkOffline = function () {
+  if (!navigator.onLine) {
+    var offlineMessage = document.createElement('div');
+    var offlineMessageText = document.createTextNode('Ooops! You need to be online to open your gift.');
+    offlineMessage.appendChild(offlineMessageText);
+    main.appendChild(offlineMessage);
+  }
 }
