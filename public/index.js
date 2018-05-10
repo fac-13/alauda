@@ -40,6 +40,18 @@ var generateGiftPage = function () {
   giftButton.addEventListener('click', checkOffline)
 }
 
+
+/**
+ * Generate content page and ...
+ */
+var generateContentPage = function () {
+  clearContents();
+  var content = document.createElement('div');
+  var contentText = document.createTextNode('This is the content page');
+  content.appendChild(contentText);
+  main.appendChild(content);
+}
+
 /**
  * Check if user is offline, open dialog box
  */
@@ -55,5 +67,7 @@ var checkOffline = function () {
     setTimeout(() => {
       offlineMessage.close();
     }, 4000);
+  } else {
+    generateContentPage()
   }
 }
