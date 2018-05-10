@@ -1,8 +1,10 @@
 /* eslint-disable */
 var main = document.querySelector('main');
 var buttonTryMe = document.getElementById('button__tryme');
-var randomGift = document.getElementById('random-gift');
-var content = {};
+var content = localStorage.getItem('content')
+  ? JSON.parse(localStorage.getItem('content'))
+  : {};
+
 /**
  * Check if there is a service worker and register it
  */
@@ -15,6 +17,7 @@ if ('serviceWorker' in navigator) {
 buttonTryMe.addEventListener('click', function() {
   clearContents();
   generateGiftPage();
+  fetchContent();
 });
 
 /**
@@ -74,5 +77,38 @@ var checkOffline = function() {
     }, 4000);
   } else {
     generateContentPage();
+    renderContent(content);
   }
+};
+/**
+ * fetch content from server
+ */
+var fetchContent = function() {
+  fetch('/api/content')
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      content = data;
+      storeContent(content);
+    });
+};
+
+/**
+ * stores content in localStorage
+ */
+var storeContent = function() {
+  localStorage.setItem('content', JSON.stringify(content));
+};
+/**
+ * @param  {} data - content from the server with combined response from all API calls
+ * render content to content page
+ */
+var renderContent = function(data) {
+  data.placeholder.map(el => {
+    var giphy = document.createElement('img');
+    giphy.setAttribute('height', '200px');
+    giphy.src = el;
+    main.appendChild(giphy);
+  });
 };
