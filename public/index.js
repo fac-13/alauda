@@ -37,15 +37,20 @@ var generateGiftPage = function () {
   var giftButtonText = document.createTextNode('gift');
   giftButton.appendChild(giftButtonText);
   main.appendChild(giftButton)
-
   giftButton.addEventListener('click', checkOffline)
 }
 
 var checkOffline = function () {
   if (!navigator.onLine) {
-    var offlineMessage = document.createElement('div');
+    var offlineMessage = document.createElement('dialog');
     var offlineMessageText = document.createTextNode('Ooops! You need to be online to open your gift.');
     offlineMessage.appendChild(offlineMessageText);
     main.appendChild(offlineMessage);
+    setTimeout(() => {
+      offlineMessage.show();
+    }, 500);
+    setTimeout(() => {
+      offlineMessage.close();
+    }, 4000);
   }
 }
