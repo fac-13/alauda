@@ -11,9 +11,6 @@ if ('serviceWorker' in navigator) {
     .then(function () { console.log("Service Worker Registered"); });
 }
 
-buttonTryMe.addEventListener('click', function () {
-  generateGiftPage();
-});
 
 /**
  * Clear the content of index.html by removing the children of <main>
@@ -25,27 +22,48 @@ var clearContents = function () {
 }
 
 /**
+ * Generate the home page 
+ */
+const generateHomePage = function(){
+  clearContents(); 
+  homePageHTML(); 
+  const tryMeButton = document.getElementById('button__tryMe'); 
+  tryMeButton.addEventListener('click', generateGiftPage);
+}
+
+/**
+ * Create the elements of the homepage
+ */
+const homePageHTML = function(){
+  return main.innerHTML = `
+  <button id="button__tryMe">Try Me</button>
+  `
+}
+
+/**
  * Generate the random gift page 
  */
-var generateGiftPage = function () {
+const generateGiftPage = function () {
   clearContents();
   randomGiftHTML(); 
-  var goBackButton = document.getElementById('goBackButton'); 
+  var goBackButton = document.getElementById('button__goBack'); 
   goBackButton.addEventListener('click', generateHomePage); 
-  var randomGift = document.getElementById('randomGift'); 
+  var randomGift = document.getElementById('button__randomGift'); 
   randomGift.addEventListener('click', checkOffline);
 }
 
 /**
  * Create the elements of the random gift page
  */
-var randomGiftHTML = function(){
+const randomGiftHTML = function(){
   return main.innerHTML = `
-  <button id="goBackButton">
+  <nav>
+  <button id="button__goBack">
   <i class="fas fa-arrow-circle-left"></i>
   </button>
+  </nav>
   <p>I am the gift page</p>
-  <button id="randomGift">Gift</button>
+  <button id="button__randomGift">Gift</button>
   `
 }
 
@@ -79,3 +97,6 @@ var checkOffline = function () {
     generateContentPage()
   }
 }
+
+
+window.addEventListener('load', generateHomePage()); 
