@@ -33,11 +33,11 @@ var generateGiftPage = function () {
   var helloText = document.createTextNode('I am the gift page');
   hello.appendChild(helloText);
   main.appendChild(hello);
-  var giftButton = document.createElement('BUTTON');
-  var giftButtonText = document.createTextNode('gift');
-  giftButton.appendChild(giftButtonText);
-  main.appendChild(giftButton)
-  giftButton.addEventListener('click', checkOffline)
+  var tryMeGiftButton = document.createElement('button');
+  var tryMeGiftButtonText = document.createTextNode('gift');
+  tryMeGiftButton.appendChild(tryMeGiftButtonText);
+  main.appendChild(tryMeGiftButton)
+  tryMeGiftButton.addEventListener('click', checkOffline)
 }
 
 
