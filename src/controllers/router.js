@@ -5,6 +5,10 @@ require('env2')('.env');
 
 const router = express.Router();
 
+const home = require('./home');
+const randomGift = require('./randomGift'); 
+const randomContent = require('./randomContent'); 
+
 const content = {
   music: {},
   images: {},
@@ -13,10 +17,10 @@ const content = {
 // const category = 'entertainment,health,science,technology';
 const newsUrl = `https://newsapi.org/v2/everything?q=inspirational&totalResults=10&apiKey=${process.env.NEWS_KEY}`;
 
-router.get('/', (req, res) => {
-  console.log('home route reached');
-  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'));
-});
+  
+router.get('/', home.get); 
+router.get('/try', randomGift.get); 
+router.get('/randomContent', randomContent.get); 
 
 router.get('/api/content', (req, res) => {
   fetch(newsUrl)

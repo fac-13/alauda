@@ -1,8 +1,9 @@
 /* eslint-disable */
-var main = document.querySelector('main');
-var buttonTryMe = document.getElementById('button__tryme');
+const main = document.querySelector('main');
+const buttonTryMe = document.getElementById('button__tryme');
+const randomGiftButton = document.getElementById('button__randomGift'); 
 
-var content = localStorage.getItem('content')
+let content = localStorage.getItem('content')
   ? JSON.parse(localStorage.getItem('content'))
   : {};
 
@@ -11,109 +12,76 @@ var content = localStorage.getItem('content')
  * Check if there is a service worker and register it
  */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function() {
+  navigator.serviceWorker.register('/sw.js').then(() => {
     console.log('Service Worker Registered');
   });
 }
 
-buttonTryMe.addEventListener('click', function() {
-  clearContents();
-  generateGiftPage();
-  setTimeout(() => {
-    fetchContent()
-  }, 86400000);
-});
+/**
+ * Add event listeer to randomGiftButton to check if the user is online 
+ */
+randomGiftButton.addEventListener('click', () => {
+  checkOffline(); 
+}); 
 
 /**
- * Clear the content of index.html by removing the children of <main>
+ * Check if user is online, if offline open dialog box
  */
-var clearContents = function() {
-  while (main.firstChild) {
-    main.removeChild(main.firstChild);
-  }
-};
-
-/**
- * Generate the random gift page building all necessary elements
- */
-var generateGiftPage = function() {
-  var hello = document.createElement('p');
-  var helloText = document.createTextNode('I am the gift page');
-  var randomGift = document.createElement('button');
-  randomGift.setAttribute = ('id', 'random-gift');
-  hello.appendChild(helloText);
-  randomGift.innerText = 'Random Gift';
-  main.appendChild(hello);
-  var tryMeGiftButton = document.createElement('button');
-  var tryMeGiftButtonText = document.createTextNode('gift');
-  tryMeGiftButton.appendChild(tryMeGiftButtonText);
-  main.appendChild(tryMeGiftButton);
-  tryMeGiftButton.addEventListener('click', checkOffline);
-};
-
-/**
- * Generate content page and ...
- */
-var generateContentPage = function() {
-  clearContents();
-  var content = document.createElement('div');
-  var contentText = document.createTextNode('This is the content page');
-  content.appendChild(contentText);
-  main.appendChild(content);
-};
-
-/**
- * Check if user is offline, open dialog box
- */
-var checkOffline = function() {
+const checkOffline = () => {
+  console.log("Checkoffline reached"); 
   if (!navigator.onLine) {
-    var offlineMessage = document.createElement('dialog');
-    var offlineMessageText = document.createTextNode(
-      'Ooops! You need to be online to open your gift.'
-    );
-    offlineMessage.appendChild(offlineMessageText);
-    main.appendChild(offlineMessage);
+    console.log("You are offline"); 
+    const dialog = document.querySelector('dialog'); 
     setTimeout(() => {
-      offlineMessage.show();
+      dialog.show();
     }, 500);
     setTimeout(() => {
-      offlineMessage.close();
+      dialog.close();
     }, 4000);
   } else {
-    generateContentPage();
-    renderContent(content);
+    console.log("You are online");
+    fetchContent(); 
   }
-};
+}
+
+
 /**
- * fetch content from server
+ * fetch API content from server
  */
-var fetchContent = function () {
-  console.log("function called")
+const fetchContent = () => {
   fetch('/api/content')
     .then(response => {
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
+      console.log("Data:", data)
       content = data;
       storeContent(content);
+      renderContent(content); 
     });
 };
+
 
 /**
  * stores content in localStorage
  */
-var storeContent = function() {
+const storeContent = () => {
+  console.log("Store Content reached")
   localStorage.setItem('content', JSON.stringify(content));
 };
+
+
 /**
- * @param  {} data - content from the server with combined response from all API calls
- * render content to content page
+ * @param  {} content - content stored in localStorage 
+ * Render content on the page 
  */
-var renderContent = function(data) {
-  data.placeholder.map(el => {
-    var giphy = document.createElement('img');
-    giphy.setAttribute('height', '200px');
-    giphy.src = el;
-    main.appendChild(giphy);
-  });
+const renderContent = (content) => {
+  console.log("Rendercontent reached")
+  const section = document.querySelector('section'); 
+  content.placeholder.map((el) => {
+    const giphy = `<img src=${el} alt="Giphy" height="200" />`
+    section.insertAdjacentHTML('beforeend', giphy);
+  })
 };
+
+
