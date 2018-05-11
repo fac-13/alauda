@@ -2,8 +2,6 @@
 var main = document.querySelector('main');
 var buttonTryMe = document.getElementById('button__tryme');
 
-//fetch data and store in localStorage every day at 7am local time
-
 var content = localStorage.getItem('content')
   ? JSON.parse(localStorage.getItem('content'))
   : {};
