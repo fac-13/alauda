@@ -1,0 +1,24 @@
+<p>I am the sign up and login page</p>
+<button id="signup">Sign up</button>
+<button id="login">Login</button>
+
+<dialog id="signup" role="dialog" open>
+    <form id="signup-form" action='/signup' method='post'>
+      <label for="username">Username:</label>
+      <input id="username" name="username" type="text" required/>
+      <label for="password">Password:</label>
+      <input id="password" name="password"      required/>
+      <label for="confirm-password">Confirm Password:</label>
+      <input id="confirm-password" name="confirm-password" required />
+      <button id="signup-btn">Next!</button>
+    </form>
+  </dialog>
+  <dialog id="login" role="dialog">
+    <form id="login-form">
+      <label for="login-email">Email:</label>
+      <input id="login-email" name="email" required/>
+      <label for="login-password">Password:</label>
+      <input id="login-password" name="password" type="password" required/>
+      <button type="button" id="login-btn">Log in</button>
+    </form>
+  </dialog>
