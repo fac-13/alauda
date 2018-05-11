@@ -1,5 +1,5 @@
 const staticAssets = [
-  './',
+  './', 
   './style.css',
   './index.js',
   './images/icons/icon-72x72.png',
@@ -10,6 +10,8 @@ const staticAssets = [
   './images/icons/icon-192x192.png',
   './images/icons/icon-384x384.png',
   './images/icons/icon-512x512.png', 
+  '/try', 
+  '/randomContent'
 ];
 
 /**

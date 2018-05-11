@@ -4,6 +4,10 @@ const path = require('path');
 
 const router = express.Router();
 
+const home = require('./home');
+const randomGift = require('./randomGift'); 
+const randomContent = require('./randomContent'); 
+
 const content = {
   music: {},
   images: {},
@@ -13,10 +17,10 @@ const content = {
 const placeholderUrl =
   'http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC';
 
-router.get('/', (req, res) => {
-  console.log('home route reached');
-  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'));
-});
+  
+router.get('/', home.get); 
+router.get('/try', randomGift.get); 
+router.get('/randomContent', randomContent.get); 
 
 router.get('/api/content', (req, res) => {
   fetch(placeholderUrl)
