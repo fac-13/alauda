@@ -1,17 +1,17 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
+require('env2')('.env');
 
 const router = express.Router();
 
 const content = {
   music: {},
   images: {},
-  placeholder: []
+  news: [],
 };
-
-const placeholderUrl =
-  'http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC';
+// const category = 'entertainment,health,science,technology';
+const newsUrl = `https://newsapi.org/v2/everything?q=inspirational&totalResults=10&apiKey=${process.env.NEWS_KEY}`;
 
 router.get('/', (req, res) => {
   console.log('home route reached');
@@ -19,13 +19,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/api/content', (req, res) => {
-  fetch(placeholderUrl)
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      const data = json.data;
-      content.placeholder = data.map(el => el.images.original.url);
+  fetch(newsUrl)
+    .then(response => response.json())
+    .then((json) => {
+      content.news = json.articles;
       res.send(content);
     });
 });

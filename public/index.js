@@ -1,9 +1,13 @@
 /* eslint-disable */
 var main = document.querySelector('main');
 var buttonTryMe = document.getElementById('button__tryme');
+
+//fetch data and store in localStorage every day at 7am local time
+
 var content = localStorage.getItem('content')
   ? JSON.parse(localStorage.getItem('content'))
   : {};
+
 
 /**
  * Check if there is a service worker and register it
@@ -17,7 +21,9 @@ if ('serviceWorker' in navigator) {
 buttonTryMe.addEventListener('click', function() {
   clearContents();
   generateGiftPage();
-  fetchContent();
+  setTimeout(() => {
+    fetchContent()
+  }, 86400000);
 });
 
 /**
@@ -83,7 +89,8 @@ var checkOffline = function() {
 /**
  * fetch content from server
  */
-var fetchContent = function() {
+var fetchContent = function () {
+  console.log("function called")
   fetch('/api/content')
     .then(response => {
       return response.json();
