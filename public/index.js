@@ -11,7 +11,7 @@ let content = localStorage.getItem('content')
  * Check if there is a service worker and register it
  */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function () {
+  navigator.serviceWorker.register('/sw.js').then(() => {
     console.log('Service Worker Registered');
   });
 }
@@ -19,7 +19,7 @@ if ('serviceWorker' in navigator) {
 /**
  * Add event listeer to randomGiftButton to check if the user is online 
  */
-randomGiftButton.addEventListener('click', function(){
+randomGiftButton.addEventListener('click', () => {
   checkOffline(); 
 }); 
 
@@ -29,24 +29,20 @@ randomGiftButton.addEventListener('click', function(){
 const checkOffline = () => {
   console.log("Checkoffline reached"); 
   if (!navigator.onLine) {
-    console.log("You are offline")
-    const offlineMessage = document.createElement('dialog');
-    const offlineMessageText = document.createTextNode(
-      'Ooops! You need to be online to open your gift.'
-    );
-    offlineMessage.appendChild(offlineMessageText);
-    main.appendChild(offlineMessage);
+    console.log("You are offline"); 
+    const dialog = document.querySelector('dialog'); 
     setTimeout(() => {
-      offlineMessage.show();
+      dialog.show();
     }, 500);
     setTimeout(() => {
-      offlineMessage.close();
+      dialog.close();
     }, 4000);
   } else {
     console.log("You are online");
     fetchContent(); 
   }
 }
+
 
 /**
  * fetch API content from server
