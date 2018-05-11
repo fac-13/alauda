@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/fac-13/allauda#readme",
   "dependencies": {
+    "cron": "^1.3.0",
     "env2": "^2.2.0",
     "eslint": "^4.19.1",
     "express": "^4.16.3",

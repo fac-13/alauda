@@ -12,17 +12,30 @@ let content = localStorage.getItem('content')
 /**
  * Check if there is a service worker and register it
  */
+
+const fetchContent = (url) => {
+  fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Data:", data)
+      content = data;
+      storeContent(content);
+      renderContent(content); 
+    });
+};
+
 if ('serviceWorker' in navigator) {
+  fetchContent('/api/firstContent')
   navigator.serviceWorker.register('/sw.js').then(() => {
     console.log('Service Worker Registered');
   });
 }
 
 if (location.url == "/") {
-  tryMeButton.addEventListener('click', () => {
- 
-   })
-}
+  tryMeButton.addEventListener('click', (e) => console.log(e));
+};
 
 /**
  * Add event listeer to randomGiftButton to check if the user is online 
@@ -50,7 +63,7 @@ const checkOffline = () => {
     }, 4000);
   } else {
     console.log("You are online");
-    fetchContent(); 
+    fetchContent('/api/content'); 
   }
 }
 
@@ -58,19 +71,6 @@ const checkOffline = () => {
 /**
  * fetch API content from server
  */
-const fetchContent = () => {
-  fetch('/api/content')
-    .then(response => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Data:", data)
-      content = data;
-      storeContent(content);
-      renderContent(content); 
-    });
-};
-
 
 /**
  * stores content in localStorage

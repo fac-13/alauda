@@ -1,5 +1,5 @@
 const staticAssets = [
-  './', 
+  './',
   './style.css',
   './index.js',
   './images/icons/icon-72x72.png',
@@ -9,25 +9,24 @@ const staticAssets = [
   './images/icons/icon-152x152.png',
   './images/icons/icon-192x192.png',
   './images/icons/icon-384x384.png',
-  './images/icons/icon-512x512.png', 
-  '/try', 
-  '/randomContent'
+  './images/icons/icon-512x512.png',
+  '/try',
+  '/randomContent',
 ];
 
 /**
  * On install cache the static assets
  */
-self.addEventListener('install', async event => {
+self.addEventListener('install', async (event) => {
   const cache = await caches.open('static');
   cache.addAll(staticAssets);
-})
+});
 
 /**
  * Intercepts all fetch requests and respond with the cached content
  */
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const req = event.request;
-  console.log("Req:", req);
   event.respondWith(cacheFirst(req));
 });
 
