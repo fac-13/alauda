@@ -1,6 +1,7 @@
+
 /* eslint-disable */
 const main = document.querySelector('main');
-const buttonTryMe = document.getElementById('button__tryme');
+const tryMeButton = document.getElementById('button__tryMe');
 const randomGiftButton = document.getElementById('button__randomGift'); 
 
 let content = localStorage.getItem('content')
@@ -17,12 +18,21 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+if (location.url == "/") {
+  tryMeButton.addEventListener('click', () => {
+ 
+   })
+}
+
 /**
  * Add event listeer to randomGiftButton to check if the user is online 
  */
-randomGiftButton.addEventListener('click', () => {
-  checkOffline(); 
-}); 
+if (location.url == '/try') {
+  randomGiftButton.addEventListener('click', () => {
+    checkOffline(); 
+  }); 
+}
+
 
 /**
  * Check if user is online, if offline open dialog box
