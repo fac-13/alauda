@@ -18,7 +18,7 @@ const fetchApi = (url) => {
     });
 };
 
-exports.get = async (req, res) => {
-  await fetchApi(newsUrl);
+exports.get = (req, res) => {
+  fetchApi(newsUrl);
   res.send(content);
 };
