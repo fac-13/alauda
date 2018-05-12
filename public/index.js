@@ -27,20 +27,20 @@ randomGiftButton.addEventListener('click', () => {
  * Check if user is online, if offline open dialog box
  */
 const checkOffline = () => {
-  console.log("Checkoffline reached"); 
-  if (!navigator.onLine) {
-    console.log("You are offline"); 
-    const dialog = document.querySelector('dialog'); 
-    setTimeout(() => {
-      dialog.show();
-    }, 500);
-    setTimeout(() => {
-      dialog.close();
-    }, 4000);
-  } else {
-    console.log("You are online");
+  // console.log("Checkoffline reached"); 
+  // if (!navigator.onLine) {
+  //   console.log("You are offline"); 
+  //   const dialog = document.querySelector('dialog'); 
+  //   setTimeout(() => {
+  //     dialog.show();
+  //   }, 500);
+  //   setTimeout(() => {
+  //     dialog.close();
+  //   }, 4000);
+  // } else {
+  //   console.log("You are online");
     fetchContent(); 
-  }
+  // }
 }
 
 
@@ -55,19 +55,19 @@ const fetchContent = () => {
     .then((data) => {
       console.log("Data:", data)
       content = data;
-      storeContent(content);
+
+      // storeContent(content);
       renderContent(content); 
     });
 };
 
-
 /**
  * stores content in localStorage
  */
-const storeContent = () => {
-  console.log("Store Content reached")
-  localStorage.setItem('content', JSON.stringify(content));
-};
+// const storeContent = () => {
+//   console.log("Store Content reached")
+//   localStorage.setItem('content', JSON.stringify(content));
+// };
 
 
 /**
