@@ -32,9 +32,6 @@ const job = new CronJob({
 
 job.start();
 
-
-module.exports = {
-  content,
-  fetchApi,
+exports.get = (req, res) => {
+  res.send(content);
 };
-
