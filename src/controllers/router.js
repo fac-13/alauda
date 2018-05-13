@@ -1,37 +1,17 @@
 const express = require('express');
-const fetch = require('node-fetch');
-const path = require('path');
 
 const router = express.Router();
 
 const home = require('./home');
-const randomGift = require('./randomGift'); 
-const randomContent = require('./randomContent'); 
+const randomGift = require('./randomGift');
+const randomContent = require('./randomContent');
+const firstContent = require('./firstContent');
+const regularContent = require('./regularContent');
 
-const content = {
-  music: {},
-  images: {},
-  placeholder: []
-};
-
-const placeholderUrl =
-  'http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC';
-
-  
-router.get('/', home.get); 
-router.get('/try', randomGift.get); 
-router.get('/randomContent', randomContent.get); 
-
-router.get('/api/content', (req, res) => {
-  fetch(placeholderUrl)
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      const data = json.data;
-      content.placeholder = data.map(el => el.images.original.url);
-      res.send(content);
-    });
-});
+router.get('/', home.get);
+router.get('/try', randomGift.get);
+router.get('/randomContent', randomContent.get);
+router.get('/api/firstContent', firstContent.get);
+router.get('api/content', regularContent.get);
 
 module.exports = router;
