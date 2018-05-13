@@ -3,6 +3,7 @@ const path = require('path');
 const controllers = require('./controllers/router');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 require('env2')('./.env');
 
@@ -13,6 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+mongoose.connect(process.env.DATABASE_URL)
+  .then(() => {
+    console.log('Successfully connected to MongoDb');
+  });
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
