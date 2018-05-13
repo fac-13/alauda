@@ -4,7 +4,7 @@
   "description": "PWA morning app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
+    "start": "node src/server.js", 
     "dev": "nodemon src/server.js",
     "test": "jest"
   },
