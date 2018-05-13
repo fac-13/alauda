@@ -81,10 +81,15 @@ main{
 .img__giphy{
   margin-left:5px;
   border-radius: 5px;
+  animation: appear 1s ease-in;
 }
 
 @keyframes gift{
   0%{transform: scale(1); }
   50%{transform:scale(1.2);}
   100%{transform:scale(1);}
+}
+@keyframes appear{
+  0%{opacity: 0;}
+  100%{opacity:1;}
 }
