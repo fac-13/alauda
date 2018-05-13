@@ -15,5 +15,6 @@ router.get('/randomContent', randomContent.get);
 router.get('/api/firstContent', firstContent.get);
 router.get('api/content', regularContent.get);
 router.get('/signup', signup.get);
+router.post('/signup', signup.post);
 
 module.exports = router;
