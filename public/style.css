@@ -8,7 +8,9 @@ body{
   height: 100vh;
   background: linear-gradient(var(--green), var(--blue)), no-repeat;
   color: var(--purple);
+  font-size: 1.2rem;
   font-family: 'Oxygen', sans-serif;
+  animation: appear 1s ease-in;
 }
 .nav{
   min-width:100%;
@@ -67,11 +69,12 @@ main{
 
 .section__content{
   background-color: transparent;
-  border: 1px solid var(--purple);
+  padding: 5px;
   display:flex;
   flex-wrap: wrap;
   overflow: scroll;
   max-height:90%;
+  width: 90%;
 }
 
 .gift{
@@ -84,6 +87,18 @@ main{
   animation: appear 1s ease-in;
 }
 
+.content__articles{
+  animation: appear 1s ease-in;
+}
+
+.img__article{
+  max-width: 100%;
+}
+
+.link__title, .link_visited{
+  text-decoration: none;
+  color: var(--purple)
+}
 @keyframes gift{
   0%{transform: scale(1); }
   50%{transform:scale(1.2);}
@@ -92,4 +107,10 @@ main{
 @keyframes appear{
   0%{opacity: 0;}
   100%{opacity:1;}
+}
+
+@media(min-width: 700px){
+  .section__content{
+    max-width: 60%;
+  }
 }
