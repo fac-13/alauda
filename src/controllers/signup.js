@@ -9,11 +9,13 @@ exports.post = (req, res) => {
   const { username, password } = req.body;
   bcrypt
     .hash(password, 10)
-    .then(password => newUser.create({ username, password }))
+    .then((password) => {
+      newUser.create({ username, password });
+      res.redirect('/thankYou');
+    })
     .catch((err) => {
-      if (err.message.includes('duplicate')) {
-        console.log('Error', err.message);
-        res.render('signup', { err: true, errMessage: 'This user name is already taken!' });
+      if (err.message.includes('duplicate key error index')) {
+        res.render('signup', { err: 'This user name is already taken!' });
       } else {
         console.log(err);
       }
