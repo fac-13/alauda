@@ -14,17 +14,17 @@ describe('Test the home path', () => {
       .then((response) => {
         expect(response.type).toBe('text/html');
       }));
-  test('It should produce a page with a link that says Try Me', () =>
+  test('It should produce a page with a Try Me button', () =>
     request(app)
       .get('/')
       .then((response) => {
-        expect(response.text.includes('<a href="/try">Try Me</a>')).toBe(true);
+        expect(response.text.includes('<a class="link" href="/try"><button id="button__tryMe" class="button button__tryme">Try Me</button></a>')).toBe(true);
       }));
   test('It should produce a page with a button that has id button__tryMe', () =>
     request(app)
       .get('/')
       .then((response) => {
-        expect(response.text.includes('<button id="button__tryMe">')).toBe(true);
+        expect(response.text.includes('<button id="button__tryMe" class="button button__tryme">')).toBe(true);
       }));
 });
 
@@ -46,9 +46,9 @@ describe('Test the try path', () => {
       }));
   test('It should have a section', () =>
     request(app)
-      .get('/try')
+      .get('/randomContent')
       .then((response) => {
-        expect(response.text.includes('<section>')).toBe(true);
+        expect(response.text.includes('<section')).toBe(true);
       }));
   test('It should send an html page', () =>
     request(app)
