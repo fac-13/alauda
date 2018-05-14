@@ -4,8 +4,9 @@ const controllers = require('./controllers/router');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dbconnection = require('./model/database/dbconnection');
 
-require('env2')('./../.env');
+require('env2')('./.env');
 
 const app = express();
 
@@ -14,11 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
-mongoose.connect(process.env.DATABASE_URL)
-  .then(() => {
-    console.log('Successfully connected to MongoDb');
-  });
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
