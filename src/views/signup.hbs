@@ -1,7 +1,9 @@
 <section class="signup">
   <form class="signup__from" action="/signup" method="post">
     <label for="username">username</label>
-    <input id="username" name="username" type="text" class="signup__username" required>
+    <input id="username" name="username" type="text" class="signup__username" required> {{#if err}}
+    <p>{{errMessage}}</p>
+    {{/if}}
     <label for="password">Password</label>
     <input id="password" name="password" type="password" class="signup__password" required>
     <label for="confirm-password">Confirm Password</label>
