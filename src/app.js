@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-require('env2')('./.env');
+require('env2')('./../.env');
 
 const app = express();
 
