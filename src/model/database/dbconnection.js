@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-require('env2')('./env');
+require('env2')('./.env');
 
 let dbconnect = process.env.DATABASE_URL;
 
