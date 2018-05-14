@@ -1,6 +1,6 @@
 :root{
     --blue:#00A8BB;
-    --green:#15C89B;
+    --green:#15c89b;
     --purple:#801C7C;
 }
 
@@ -33,6 +33,14 @@ main{
   background-image: url('images/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.container__blurb{
+ z-index: 10;
+ max-width: 90%;
+ background-color:rgba(122, 221, 196, 0.44);
+ border-radius: 10px;
+ padding: 5px;
 }
 
 .button{

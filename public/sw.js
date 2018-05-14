@@ -10,8 +10,12 @@ const staticAssets = [
   './images/icons/icon-192x192.png',
   './images/icons/icon-384x384.png',
   './images/icons/icon-512x512.png',
+  './images/back.svg',
+  './images/gift_white.svg',
+  './images/logo.svg',
   '/try',
   '/randomContent',
+  './firstContent',
 ];
 
 /**
