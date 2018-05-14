@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-  email: {
+  username: {
     type: String, required: true, index: { unique: true }, lowercase: true, trim: true,
   },
   password: {
