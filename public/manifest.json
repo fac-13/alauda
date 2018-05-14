@@ -1,8 +1,8 @@
 {
-  "name": "Allauda",
-  "short_name": "Allauda",
-  "theme_color": "#7ec103",
-  "background_color": "#2196f3",
+  "name": "Alauda",
+  "short_name": "Alauda",
+  "theme_color": "#801c7c",
+  "background_color": "#15c89b",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
