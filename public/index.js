@@ -22,7 +22,7 @@ const fetchContent = (url) => {
       console.log("Data:", data)
       content = data;
       storeContent(content);
-      renderContent(content); 
+      renderContent(content);
     });
 };
 
@@ -85,8 +85,9 @@ const storeContent = () => {
  * @param  {} content - content stored in localStorage 
  * Render content on the page 
  */
+
 const renderContent = (content) => {
-  const section = document.querySelector('section'); 
+  const section = document.querySelector('.section__content'); 
   content[0].map((el) => {
     const articles = `<div class="content__articles"><a href="${el.url}" target="_blank" class="link__title"><h3 class="title">${el.title}</h3></a><p>${el.description}</p><img class="img__article" src="${el.urlToImage}"/></div>"`
     section.insertAdjacentHTML('beforeend', articles);
