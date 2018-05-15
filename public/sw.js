@@ -16,6 +16,7 @@ const staticAssets = [
   '/try',
   '/randomContent',
   './firstContent',
+  './pushNotification.js',
 ];
 
 /**
