@@ -7,8 +7,6 @@ exports.get = (req, res) => {
 
 exports.post = async (req, res) => {
   const { loginusername, loginpassword } = req.body;
-  console.log('login username: ', loginusername);
-  console.log('login password: ', loginpassword);
   try {
     const foundUser = await getUser(loginusername);
     console.log(foundUser);
