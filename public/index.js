@@ -37,14 +37,11 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-if (location.url == "/") {
-  tryMeButton.addEventListener('click', (e) => console.log(e));
-};
 
 /**
  * Add event listeer to randomGiftButton to check if the user is online 
  */
-if (location.url == '/try') {
+if (window.location.pathname == '/try') {
   randomGift.addEventListener('click', () => {
     checkOffline(); 
   }); 
@@ -54,10 +51,8 @@ if (location.url == '/try') {
 /**
  * Check if user is online, if offline open dialog box
  */
-const checkOffline = () => {
-  console.log("Checkoffline reached"); 
+const checkOffline = () => { 
   if (!navigator.onLine) {
-    console.log("You are offline"); 
     const dialog = document.querySelector('dialog'); 
     setTimeout(() => {
       dialog.show();
@@ -66,7 +61,6 @@ const checkOffline = () => {
       dialog.close();
     }, 4000);
   } else {
-    console.log("You are online");
     fetchContent('/api/content'); 
   }
 }
@@ -77,7 +71,6 @@ const checkOffline = () => {
  * stores content in localStorage
  */
 const storeContent = () => {
-  console.log("Store Content reached")
   localStorage.setItem('content', JSON.stringify(content));
 };
 
