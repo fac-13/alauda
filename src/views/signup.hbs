@@ -9,12 +9,16 @@
     <label for="password">Password</label>
     <input id="password" name="password" type="password" class="signup__password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
     <p id="password-err"class="error"></p>
+    
     <label for="confirm-password">Confirm Password</label>
     <input id="confirm-password" name="confirmPassword" type="password" class="signup__confirm-password" required>
     <p id="confirm-password-err"class="error"></p>
+   
     <label for="age">Are you 18 or over?</label>
-    <input id="age" type="radio" name="age" value="yes">Yes
-    <input id="age" type="radio" name="age" value="no">No<br>
+    <input id="over18" type="radio" name="age" value="yes">Yes
+    <input id="under18" type="radio" name="age" value="no">No<br>
+    <p id="age-err" class="error"></p>
+
     <label for="time">What time do you wake up?</label>
     <select name="time">
       <option value="05:00">05:00</option>
@@ -36,6 +40,7 @@
       <option value="13:00">13:00</option>
     </select><br>
      </input>
+  
    <label for="like">What do you like?</label>
    <input type="checkbox" name="like" value="tech">Tech
    <input type="checkbox" name="like" value="psychology">Psychology
