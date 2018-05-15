@@ -3,10 +3,13 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
 const error = document.querySelector('.error');
+const underage = document.getElementById('under18'); 
+const adult = document.getElementById('over18'); 
 
 const usernameErr = document.getElementById('username-err');
 const passwordErr = document.getElementById('password-err');
 const confirmErr = document.getElementById('confirm-password-err');
+const ageErr = document.getElementById('age-err'); 
 
 const checkUsername = () => {
   if (username.validity.valueMissing) {
@@ -42,6 +45,23 @@ const checkConfirmPw = () => {
   }
 };
 
+/**
+ * Check if the user is over 18 
+ */
+const checkAge = () => {
+  if (underage.checked){
+    displayErr(ageErr, 'Sorry you need to be 18 or over to use the app'); 
+  }
+  else if (adult.checked){
+    displayErr(ageErr, ''); 
+    return true; 
+  }
+  else{
+    displayErr(ageErr, ''); 
+    return true; 
+  }
+}
+
 function displayErr(errElem, errMsg) {
   errElem.innerText = errMsg;
 }
@@ -49,6 +69,8 @@ function displayErr(errElem, errMsg) {
 username.addEventListener('focusout', checkUsername);
 password.addEventListener('focusout', checkPw);
 confirmPassword.addEventListener('focusout', checkConfirmPw);
+underage.addEventListener('click', checkAge); 
+adult.addEventListener('click', checkAge); 
 
 form.addEventListener('submit', (event) => {
   if (!checkUsername()) {
@@ -59,5 +81,8 @@ form.addEventListener('submit', (event) => {
   }
   if (!checkConfirmPw()) {
     event.preventDefault();
+  }
+  if (!checkAge()){
+    event.preventDefault(); 
   }
 });
