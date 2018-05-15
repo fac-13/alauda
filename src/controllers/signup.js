@@ -7,7 +7,6 @@ const convertTime = (time) => {
   return time; 
  }
  
-
 exports.get = (req, res) => {
   res.render('signup');
 };
