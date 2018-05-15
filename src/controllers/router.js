@@ -10,7 +10,9 @@ const regularContent = require('./regularContent');
 const thankYou = require('./thankYou');
 const signup = require('./signup');
 const login = require('./login');
+const cookieSession = require('cookie-session');
 
+router.use(cookieSession({ name: 'our_session', secret: process.env.SECRET }));
 router.get('/', home.get);
 router.get('/try', randomGift.get);
 router.get('/randomContent', randomContent.get);

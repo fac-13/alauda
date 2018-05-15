@@ -13,13 +13,20 @@ exports.post = async (req, res) => {
     const foundUser = await getUser(loginusername);
     console.log(foundUser);
     bcrypt.compare(loginpassword, foundUser.password, function (err, result) {
-      if (result === true) {
-        console.log('authenticated');
+      if (result) {
+        req.session.username = loginusername;
+        req.session.loggedIn = true;
+        res.redirect('/thankYou');
       } else {
-        console.log('NOT authenticated');
+        res.render('login', {
+          errorMessage: 'Password is incorrect',
+        });
       }
     });
   } catch (err) {
-    console.log(err);
+    res.render('login', {
+      errorMessage: 'User does not exist',
+    });
   }
 };
+

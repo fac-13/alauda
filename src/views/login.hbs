@@ -10,5 +10,8 @@
     <input id="login__password" name="loginpassword" type="login__password" class="login__password" required>
     <p id="login__password-err"class="error"></p>
     <input type="submit" value="login"></input>
+    {{#if errorMessage}}
+    <span>{{errorMessage}}</span>
+    {{/if}}
   </form>
 </section>
