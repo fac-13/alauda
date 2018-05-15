@@ -6,7 +6,8 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  const { username, password } = req.body;
+  console.log("Res body:", req.body); 
+  const { username, password, age, like } = req.body;
   bcrypt
     .hash(password, 10)
     .then(password => newUser.create({ username, password }))
