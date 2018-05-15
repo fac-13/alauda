@@ -10,13 +10,13 @@ exports.post = (req, res) => {
   bcrypt
     .hash(password, 10)
     .then(password => newUser.create({ username, password }))
-    .then(() => res.redirect('/thankYou'))
+    .then(() => res.render('thankYou', { user: username }))
     .catch((err) => {
       if (err.message.includes('duplicate')) {
-        console.log('this is err', err);
         res.render('signup', { err: 'This username is already taken!' });
       } else {
         console.log(err);
+        // render error page
       }
     });
 };
