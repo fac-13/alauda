@@ -1,11 +1,11 @@
 const dbconnection = require('../model/database/dbconnection');
-const { dbconnect } = require('../model/database/dbconnection');
 
 const { create } = require('../model/queries/createUser');
 const { User } = require('../model/database/userSchema');
 const mongoose = require('mongoose');
 
 require('env2')('./.env');
+
 
 // const User = beforeAll(() => {
 //   mongoose.model('User', UserSchema);
@@ -30,6 +30,8 @@ test('Test if database connection exists', () => {
   expect(mongoose.connection.name).toEqual('testalaudadb');
 });
 
-// describe('Test the removeComment method', () => {
-//   console.log('New user:', testUser1.username);
-// });
+it("has a module", () => {
+  console.log('disconnecting');
+  expect(dbconnection).toBeDefined();
+});
+// mongoose.connection.close();

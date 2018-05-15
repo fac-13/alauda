@@ -1,17 +1,54 @@
 <section class="signup">
   <form class="form__signup" action="/signup" method="post" novalidate>
     <label for="username">username</label>
-    <input id="username" name="username" type="text" class="signup__username" required> 
-    {{#if err}}
+    <input id="username" name="username" type="text" class="signup__username" required> {{#if err}}
     <p>{{err}}</p>
     {{/if}}
     <p id="username-err" class="error"></p>
     <label for="password">Password</label>
-    <input id="password" name="password" type="password" class="signup__password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-    <p id="password-err"class="error"></p>
+    <input id="password" name="password" type="password" class="signup__password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      required>
+    <p id="password-err" class="error"></p>
+
     <label for="confirm-password">Confirm Password</label>
     <input id="confirm-password" name="confirmPassword" type="password" class="signup__confirm-password" required>
-    <p id="confirm-password-err"class="error"></p>
+    <p id="confirm-password-err" class="error"></p>
+
+    <label for="age">Are you 18 or over?</label>
+    <input id="over18" type="radio" name="age" value="yes" required>Yes
+    <input id="under18" type="radio" name="age" value="no">No
+    <br>
+    <p id="age-err" class="error"></p>
+
+    <label for="time">What time do you wake up?</label>
+    <select id="time" name="wakeUpTime" required>
+      <option value=""></option>
+      <option value="05:00">05:00</option>
+      <option value="05:30">05:30</option>
+      <option value="06:00">06:00</option>
+      <option value="06:30">06:30</option>
+      <option value="07:00">07:00</option>
+      <option value="07:30">07:30</option>
+      <option value="08:00">08:00</option>
+      <option value="08:30">08:30</option>
+      <option value="09:00">09:00</option>
+      <option value="09:30">09:30</option>
+      <option value="10:00">10:00</option>
+      <option value="10:30">10:30</option>
+      <option value="11:00">11:00</option>
+      <option value="11:30">11:30</option>
+      <option value="12:00">12:00</option>
+      <option value="12:30">12:30</option>
+      <option value="13:00">13:00</option>
+    </select>
+    <p id="time-err" class="error"></p>
+
+    <br>
+    </input>
+
+    <label for="like">What do you like?</label>
+    <input type="checkbox" name="like" value="tech">Tech
+    <input type="checkbox" name="like" value="psychology">Psychology
     <input type="submit" value="Signup"></input>
   </form>
 </section>

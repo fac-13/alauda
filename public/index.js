@@ -9,10 +9,10 @@ let content = localStorage.getItem('content')
   : {};
 
 
-/**
- * Check if there is a service worker and register it
- */
 
+/**
+ * fetch API content from server
+ */
 const fetchContent = (url) => {
   fetch(url)
     .then(response => {
@@ -26,6 +26,10 @@ const fetchContent = (url) => {
     });
 };
 
+
+/**
+ * Check if there is a service worker and register it
+ */
 if ('serviceWorker' in navigator) {
   fetchContent('/api/firstContent')
   navigator.serviceWorker.register('/sw.js').then(() => {
@@ -68,9 +72,6 @@ const checkOffline = () => {
 }
 
 
-/**
- * fetch API content from server
- */
 
 /**
  * stores content in localStorage
