@@ -1,4 +1,4 @@
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const newUser = require('./../model/queries/createUser');
 
 exports.get = (req, res) => {
@@ -7,12 +7,18 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const { username, password } = req.body;
-  newUser.create({ username, password })
-    .then(console.log('Success!'))
-    .catch((error) => {
-      console.log(error);
+  bcrypt
+    .hash(password, 10)
+    .then(password => newUser.create({ username, password }))
+    .then(() => res.render('thankYou', { user: username }))
+    .catch((err) => {
+      if (err.message.includes('duplicate')) {
+        res.render('signup', { err: 'This username is already taken!' });
+      } else {
+        console.log(err);
+        // render error page
+      }
     });
-  // bcrypt
-  //   .hash(password, 10)
-  //   .then(hash => newUser.create({ email, hash }))
 };
+
+// newUser.create({ username, password })

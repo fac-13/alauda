@@ -1,7 +1,7 @@
-const UserModel = require('./../database/userSchema');
+const { User } = require('./../database/userSchema');
 
-async function create(data) {
-  const user = new UserModel(data);
+function create(data) {
+  const user = new User(data);
   return user.save();
 }
 

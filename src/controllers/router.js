@@ -7,6 +7,7 @@ const randomGift = require('./randomGift');
 const randomContent = require('./randomContent');
 const firstContent = require('./firstContent');
 const regularContent = require('./regularContent');
+const thankYou = require('./thankYou');
 const signup = require('./signup');
 
 router.get('/', home.get);
@@ -16,5 +17,6 @@ router.get('/api/firstContent', firstContent.get);
 router.get('api/content', regularContent.get);
 router.get('/signup', signup.get);
 router.post('/signup', signup.post);
+router.get('/thankYou', thankYou.get);
 
 module.exports = router;

@@ -1,11 +1,17 @@
 <section class="signup">
-  <form class="signup__from" action="/signup" method="post">
+  <form class="form__signup" action="/signup" method="post" novalidate>
     <label for="username">username</label>
-    <input id="username" name="username" type="text" class="signup__username" required>
+    <input id="username" name="username" type="text" class="signup__username" required> 
+    {{#if err}}
+    <p>{{err}}</p>
+    {{/if}}
+    <p id="username-err" class="error"></p>
     <label for="password">Password</label>
-    <input id="password" name="password" type="password" class="signup__password" required>
+    <input id="password" name="password" type="password" class="signup__password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+    <p id="password-err"class="error"></p>
     <label for="confirm-password">Confirm Password</label>
     <input id="confirm-password" name="confirmPassword" type="password" class="signup__confirm-password" required>
+    <p id="confirm-password-err"class="error"></p>
     <input type="submit" value="Signup"></input>
   </form>
 </section>
