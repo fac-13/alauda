@@ -5,16 +5,16 @@ exports.get = (req, res) => {
   res.render('login');
 };
 
-exports.post = (req, res) => {
+exports.post = async (req, res) => {
   const { loginusername, loginpassword } = req.body;
   console.log('login username: ', loginusername);
   console.log('login password: ', loginpassword);
-  u.getUser(loginusername);
+  let uu = await u.getUser(loginusername);
 //   }catch (err) {
 //     console.log(err);
 //   }
   
-//   console.log(uu);
+  console.log(uu);
 };
 //   bcrypt
 //     .hash(password, 10)
