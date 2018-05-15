@@ -1,0 +1,14 @@
+<section class="login">
+  <form class="form__login" action="/login" method="post" novalidate>
+    <label for="login__username">username</label>
+    <input id="login__username" name="loginusername" type="text" class="login__username" required> 
+    {{#if err}}
+    <p>{{err}}</p>
+    {{/if}}
+    <p id="username-err" class="error"></p>
+    <label for="login__password">login__password</label>
+    <input id="login__password" name="loginpassword" type="login__password" class="login__password" required>
+    <p id="login__password-err"class="error"></p>
+    <input type="submit" value="login"></input>
+  </form>
+</section>
