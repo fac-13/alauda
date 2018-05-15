@@ -49,7 +49,10 @@ const checkConfirmPw = () => {
  * Check if the user is over 18 
  */
 const checkAge = () => {
-  if (underage.checked){
+  if (!underage.checked && !adult.checked){
+    displayErr(ageErr, 'Please select one option'); 
+  }
+  else if (underage.checked){
     displayErr(ageErr, 'Sorry you need to be 18 or over to use the app'); 
   }
   else if (adult.checked){
