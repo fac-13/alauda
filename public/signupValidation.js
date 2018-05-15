@@ -78,6 +78,7 @@ const checkTime = () => {
   else return true; 
 }
 
+
 function displayErr(errElem, errMsg) {
   errElem.innerText = errMsg;
 }
