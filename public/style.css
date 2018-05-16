@@ -94,7 +94,7 @@ main {
 
 .label {
   display: inline-block;
-  margin-bottom: 5px;
+  margin: 5px;
   font-size: 1.2rem;
 }
 .input-text {
@@ -111,18 +111,23 @@ main {
   box-shadow: 0 0 5px var(--purple);
 }
 
+.signup__confirm-password {
+  margin-bottom: 20px;
+}
+
 .error {
   font-size: 0.7rem;
   color: #fff;
   animation: appear 1s ease-in;
-  margin: 0;
+  margin: 5px;
+  align-self: center;
 }
 
 .timebox {
   background-color: #fafafa;
   height: 2rem;
   color: var(--purple);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .timebox:focus {
@@ -150,6 +155,17 @@ main {
   background-color: var(--purple);
 }
 
+/* doesnt work?!?! */
+.input__signup {
+  align-self: center;
+  justify-self: center;
+}
+
+.container__button {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
 /**************** section ******************/
 .section__content {
   background-color: transparent;
