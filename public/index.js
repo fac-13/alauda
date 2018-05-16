@@ -2,7 +2,7 @@
 /* eslint-disable */
 const main = document.querySelector('main');
 const tryMeButton = document.getElementById('button__tryMe');
-const randomGift = document.getElementById('link__randomGift'); 
+const randomGift = document.getElementById('link__randomGift');
 
 let content = localStorage.getItem('content')
   ? JSON.parse(localStorage.getItem('content'))
@@ -13,15 +13,16 @@ let content = localStorage.getItem('content')
 /**
  * fetch API content from server
  */
-const fetchContent = (url) => {
-  fetch(url)
+const fetchContent = () => {
+  fetch('/api/firstContent')
     .then(response => {
       return response.json();
     })
     .then((data) => {
       console.log("Data:", data)
       content = data;
-      storeContent(content);
+
+      // storeContent(content);
       renderContent(content);
     });
 };
@@ -43,36 +44,56 @@ if ('serviceWorker' in navigator) {
  */
 if (window.location.pathname == '/try') {
   randomGift.addEventListener('click', () => {
-    checkOffline(); 
-  }); 
+    checkOffline();
+  });
 }
 
 
 /**
  * Check if user is online, if offline open dialog box
  */
-const checkOffline = () => { 
-  if (!navigator.onLine) {
-    const dialog = document.querySelector('dialog'); 
-    setTimeout(() => {
-      dialog.show();
-    }, 500);
-    setTimeout(() => {
-      dialog.close();
-    }, 4000);
-  } else {
-    fetchContent('/api/content'); 
-  }
+const checkOffline = () => {
+  // console.log("Checkoffline reached"); 
+  // if (!navigator.onLine) {
+  //   console.log("You are offline"); 
+  //   const dialog = document.querySelector('dialog'); 
+  //   setTimeout(() => {
+  //     dialog.show();
+  //   }, 500);
+  //   setTimeout(() => {
+  //     dialog.close();
+  //   }, 4000);
+  // } else {
+  //   console.log("You are online");
+  fetchContent();
+  // }
 }
 
 
+/**
+ * fetch API content from server
+ */
+
+// const fetchContent = (url) => {
+//   fetch(url)
+//     .then(response => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log("Data:", data)
+//       content = data;
+//       storeContent(content);
+//       renderContent(content);
+//     });
+// };
 
 /**
  * stores content in localStorage
  */
-const storeContent = () => {
-  localStorage.setItem('content', JSON.stringify(content));
-};
+// const storeContent = () => {
+//   console.log("Store Content reached")
+//   localStorage.setItem('content', JSON.stringify(content));
+// };
 
 
 /**
@@ -81,11 +102,11 @@ const storeContent = () => {
  */
 
 const renderContent = (content) => {
-  const section = document.querySelector('.section__content'); 
-  content[0].map((el) => {
-    const articles = `<div class="content__articles"><a href="${el.url}" target="_blank" class="link__title"><h3 class="title">${el.title}</h3></a><p>${el.description}</p><img class="img__article" src="${el.urlToImage}"/></div>"`
-    section.insertAdjacentHTML('beforeend', articles);
-  });
+  const section = document.querySelector('.section__content');
+  // content[0].map((el) => {
+  //   const articles = `<div class="content__articles"><a href="${el.url}" target="_blank" class="link__title"><h3 class="title">${el.title}</h3></a><p>${el.description}</p><img class="img__article" src="${el.urlToImage}"/></div>"`
+  //   section.insertAdjacentHTML('beforeend', articles);
+  // });
   content[1].map((el) => {
     const giphy = `<img class="img__giphy"src=${el.images.downsized.url} alt="Giphy" height="200px" />`
     section.insertAdjacentHTML('beforeend', giphy);
