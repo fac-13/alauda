@@ -1,18 +1,20 @@
-<section class="login">
+{{> header}}
+<h2>Log In</h2>
+<section class="login container__form">
   <form class="form__login" action="/login" method="post" novalidate>
-    <label for="login__username">Username</label>
-    <input id="login__username" name="loginusername" type="text" class="login__username" required> 
-    {{#if err}}
+    <label class="label" for="login__username">Username</label>
+    <input id="login__username" name="loginusername" type="text" class="input-text login__username" required> {{#if err}}
     <p>{{err}}</p>
     {{/if}}
     <p id="username-err" class="error"></p>
-    <label for="login__password">Password</label>
-    <input id="login__password" name="loginpassword" type="login__password" class="login__password" required>
-    <p id="login__password-err"class="error"></p>
+    <label class="label" for="login__password">Password</label>
+    <input id="login__password" name="loginpassword" type="login__password" class="input-text login__password" required>
+    <p id="login__password-err" class="error"></p>
     {{#if errorMessage}}
     <p>{{errorMessage}}</p>
     {{/if}}
-    <input type="submit" value="login"></input>
-
+    <div class="container__button"></div>
+    <input type="submit" value="login" class="button"></input>
+    </div>
   </form>
 </section>

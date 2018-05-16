@@ -95,7 +95,7 @@ main {
   align-items: center;
   padding: 5px;
 }
-.container__signup {
+.container__form {
   z-index: 10;
   min-width: 90%;
   background-color: rgba(122, 221, 196, 0.44);
