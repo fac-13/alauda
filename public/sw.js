@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const staticAssets = [
   './',
   './style.css',
@@ -43,3 +45,22 @@ async function cacheFirst(req) {
   const cachedResponse = await caches.match(req);
   return cachedResponse || fetch(req);
 }
+
+self.addEventListener('notificationclose', (e) => {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+  console.log('Closed notification: ' + primaryKey);
+});
+
+self.addEventListener('notificationclick', function (e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+  var action = e.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    clients.openWindow('/randomGift');   // mayba change the path before deploying to Heroku
+    notification.close();
+  }
+});
