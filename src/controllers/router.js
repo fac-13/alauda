@@ -10,6 +10,10 @@ const regularContent = require('./regularContent');
 const thankYou = require('./thankYou');
 const signup = require('./signup');
 const login = require('./login');
+const profile = require('./profile');
+const deleteProfile = require('./deleteProfile');
+const logout = require('./logout');
+
 const cookieSession = require('cookie-session');
 
 router.use(cookieSession({ name: 'our_session', secret: process.env.SECRET }));
@@ -23,5 +27,8 @@ router.post('/signup', signup.post);
 router.get('/login', login.get);
 router.post('/login', login.post);
 router.get('/thankYou', thankYou.get);
+router.get('/profile/:username', profile.get);
+router.get('/logout', logout.get);
+router.get('/delete', deleteProfile.get);
 
 module.exports = router;
