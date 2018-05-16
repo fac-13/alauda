@@ -14,7 +14,7 @@ exports.post = async (req, res) => {
       if (result) {
         req.session.username = loginusername;
         req.session.loggedIn = true;
-        res.redirect('/thankYou');
+        res.redirect('/usercontent');
       } else {
         res.render('login', {
           errorMessage: 'Password is incorrect',
