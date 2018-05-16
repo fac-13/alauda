@@ -83,6 +83,8 @@ function displayErr(errElem, errMsg) {
   errElem.innerText = errMsg;
 }
 
+
+if (window.location.pathname == '/signup'){
 username.addEventListener('focusout', checkUsername);
 password.addEventListener('focusout', checkPw);
 confirmPassword.addEventListener('focusout', checkConfirmPw);
@@ -107,3 +109,4 @@ form.addEventListener('submit', (event) => {
       event.preventDefault(); 
   }
 });
+}
