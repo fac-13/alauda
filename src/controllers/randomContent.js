@@ -1,3 +1,3 @@
 exports.get = (req, res) => {
-  res.render('randomContent', { link: '/try' });
+  res.render('randomContent', { backLink: '/try' });
 };
