@@ -94,7 +94,7 @@ if (window.location.pathname == '/try') {
  * Check if user is online, if offline open dialog box
  */
 const checkOffline = () => {
-  if (!navigator.onLine) {
+  if (!window.navigator.onLine) {
     const dialog = document.querySelector('dialog');
     setTimeout(() => {
       dialog.show();
