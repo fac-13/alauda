@@ -2,7 +2,7 @@
 /* eslint-disable */
 const main = document.querySelector('main');
 const tryMeButton = document.getElementById('button__tryMe');
-const randomGift = document.getElementById('link__randomGift'); 
+const randomGift = document.getElementById('link__randomGift');
 
 let content = localStorage.getItem('content')
   ? JSON.parse(localStorage.getItem('content'))
@@ -43,17 +43,17 @@ if ('serviceWorker' in navigator) {
  */
 if (window.location.pathname == '/try') {
   randomGift.addEventListener('click', () => {
-    checkOffline(); 
-  }); 
+    checkOffline();
+  });
 }
 
 
 /**
  * Check if user is online, if offline open dialog box
  */
-const checkOffline = () => { 
-  if (!navigator.onLine) {
-    const dialog = document.querySelector('dialog'); 
+const checkOffline = () => {
+  if (!window.navigator.onLine) {
+    const dialog = document.querySelector('dialog');
     setTimeout(() => {
       dialog.show();
     }, 500);
@@ -61,7 +61,7 @@ const checkOffline = () => {
       dialog.close();
     }, 4000);
   } else {
-    fetchContent('/api/content'); 
+    fetchContent('/api/content');
   }
 }
 
@@ -81,7 +81,7 @@ const storeContent = () => {
  */
 
 const renderContent = (content) => {
-  const section = document.querySelector('.section__content'); 
+  const section = document.querySelector('.section__content');
   content[0].map((el) => {
     const articles = `<div class="content__articles"><a href="${el.url}" target="_blank" class="link__title"><h3 class="title">${el.title}</h3></a><p>${el.description}</p><img class="img__article" src="${el.urlToImage}"/></div>"`
     section.insertAdjacentHTML('beforeend', articles);
