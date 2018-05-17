@@ -13,24 +13,21 @@ const tech = 'wired, techcrunch, techradar';
 const techUrl = `https://newsapi.org/v2/top-headlines?sources=${tech}&apiKey=${process.env.NEWS_KEY}`;
 
 const movies = 'entertainment-weekly';
-const moviesUrl = `https://newsapi.org/v2/top-headlines?sources=${movies}&apiKey=${process.env.NEWS_KEY}`;
+const moviesUrl = `https://newsapi.org/v2/everything?sources=${movies}&q=movie&apiKey=${process.env.NEWS_KEY}`; 
 
 const art = 'the-huffington-post'; 
 const artUrl = `https://newsapi.org/v2/everything?sources=${art}&q=art&apiKey=${process.env.NEWS_KEY}`; 
 
-https://newsapi.org/v2/everything?sources=the-huffington-post&q=art&apiKey=993bf58090bd4470ac7b501d98186431
-
-
+const book = 'the-new-york-times'; 
+const bookUrl = `https://newsapi.org/v2/everything?sources=${book}&q=books&apiKey=${process.env.NEWS_KEY}`; 
 
 const content = {
     "science": ['dna', 'singularity', 'tihkal'],
     "nature": ['birds', 'foxes', 'fish'],
     "tech": ['js', 'python', 'sql'],
     "movies": ['tarantino', 'park chan wook', 'tarkovsky'],
-     "art": ['picasso', 'ivi', 'isaac'],
-    // "travel": ['ussr', 'cuba', 'north korea'],
-    // "psychology": ['freud', 'zimbardo', 'not maslow'],
-    // "books": ['js good bits', 'elquent js', 'war and peace']
+    "art": ['picasso', 'ivi', 'isaac'],
+    "books": ['js good bits', 'elquent js', 'war and peace']
 }
 
 /**
@@ -43,14 +40,18 @@ const fetchApi = async () => {
         fetch(techUrl).then(data => data.json()).then(data => data.articles),
         fetch(moviesUrl).then(data => data.json()).then(data => data.articles),
         fetch(artUrl).then(data => data.json()).then(data => data.articles),
+        fetch(bookUrl).then(data => data.json()).then(data => data.articles)
     ])
     content.science = responses[0];
     content.nature = responses[1];
     content.tech = responses[2];
     content.movies = responses[3];
     content.art = responses[4]; 
+    content.books = responses[5]; 
     writeDataToFile(content);
 };
+
+fetchApi(); 
 
 /**
   * @param  {} data; Writes data that came from API calls into a json file that is stored for a day in the root folder.
@@ -63,13 +64,11 @@ function writeDataToFile(data) {
     }
 }
 
-fetchApi();
-
 /*
      * Runs every day at 00:00:00 AM and fetches content from News Api
 */
 const job = new CronJob({
-    cronTime: '00 48 13 * * 1-7',
+    cronTime: '00 21 18 * * 1-7',
     onTick() {
         fetchApi();
         console.log('Cron Job is being done')
