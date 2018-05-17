@@ -1,6 +1,10 @@
 const content = require('../../content.json');
 const { getUser } = require('./../model/queries/getUser');
 
+const getUserContent = (likes) => {
+  return likes.reduce((acc,item) => (acc[item]=content[item], acc), {});
+}
+
 exports.get = async (req, res) => {
   if (req.session.length > 0) {
     const { username, loggedIn } = req.session;
