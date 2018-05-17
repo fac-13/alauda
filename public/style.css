@@ -36,6 +36,7 @@ body {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +70,7 @@ main {
 
 .button {
   min-height: 40px;
-  min-width: 230px;
+  width: 230px;
   border-radius: 20px;
   border: 1px solid var(--purple);
   background-color: transparent;
@@ -322,20 +323,12 @@ padding-top: 30px;
   font-size: 1rem;
   padding: 10px;
 }
-.container__editbutton{
-  height: 60px;
-  width: 80px;
-}
+
 .button__edit{
   height: 50px;
   width: 80px;
-  border-radius: 20px;
-  border: 1px solid var(--purple);
-  background-color: transparent;
-  color: var(--purple);
-  text-transform: lowercase;
-  font-size: 1rem;
 }
+
 @keyframes gift {
   0% {
     transform: scale(1);
