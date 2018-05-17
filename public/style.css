@@ -98,8 +98,12 @@ main {
 .link:visited {
   color: var(--purple);
   font-size: 1.5rem;
+  text-decoration: none!important;
 }
 
+.initial:link{
+  text-decoration: none;
+}
 /************ signup/login ***********/
 .container__title {
   display: flex;
@@ -244,6 +248,7 @@ main {
   animation: appear 1s ease-in;
   padding: 10px;
 }
+
 .section__content::-webkit-scrollbar {
   display: none;
 }
@@ -252,6 +257,7 @@ main {
   margin: 0;
   padding:0;
 }
+
 .list__item{
   list-style: none;
   margin-bottom: 5px;

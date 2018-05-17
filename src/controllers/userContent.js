@@ -6,13 +6,16 @@ const getUserContent = likes => likes.reduce((acc, item) => (acc[item] = content
 exports.get = async (req, res) => {
   if (req.session.length > 0) {
     const { username, loggedIn } = req.session;
+    const initial = username[0];
     try {
       const user = await getUser(username);
       const likedContent = getUserContent(user.like);
-      res.render('usercontent', { likedContent, usercontent: true, username });
+      res.render('usercontent', {
+        likedContent, usercontent: true, username, initial,
+      });
     } catch (err) {
-      let error = err.message;
-      res.render('error', { error })
+      const error = err.message;
+      res.render('error', { error });
     }
   }
 };

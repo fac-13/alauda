@@ -1,3 +1,7 @@
 exports.get = (req, res) => {
-  res.render('thankYou', { thankYou: true, backLink: '/login', user: `${req.params.username}` });
+  const { username } = req.session;
+  const initial = username[0];
+  res.render('thankYou', {
+    thankYou: true, backLink: '/login', user: `${req.params.username}`, initial,
+  });
 };
