@@ -7,8 +7,9 @@ exports.get = async (req, res) => {
       const userLikes = user.like;
       res.render('profile', { userLikes });
     } catch (err) {
-      let error = err.message;
-      res.render('error', { error })
+      res.render('profile', {
+        errorMessage: 'Something went wrong. We have no idea what it was'
+      });
     }
   }
 };
