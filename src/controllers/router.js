@@ -18,7 +18,7 @@ const cookieSession = require('cookie-session');
 
 router.use(cookieSession({ name: 'our_session', secret: process.env.SECRET }));
 router.get('/', home.get);
-router.get('/try', randomGift.get);
+router.get('/randomGift', randomGift.get);
 router.get('/randomContent', randomContent.get);
 router.get('/api/firstContent', firstContent.get);
 router.get('api/content', regularContent.get);
