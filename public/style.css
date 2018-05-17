@@ -204,6 +204,10 @@ main {
   width: 90%;
 }
 
+.section__content::-webkit-scrollbar {
+  display: none;
+}
+
 .gift {
   animation: gift 7s infinite;
 }
