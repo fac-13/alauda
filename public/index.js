@@ -19,7 +19,6 @@ const fetchContent = (url) => {
       return response.json();
     })
     .then((data) => {
-      console.log("New Content Data:", data)
       content = data;
       storeContent(content);
       renderContent(content);
