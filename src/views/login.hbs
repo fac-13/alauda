@@ -5,15 +5,15 @@
 
     <form class="form__login" action="/login" method="post" novalidate>
       <label class="label" for="login__username">Username</label>
-      <input id="login__username" name="loginusername" type="text" class="input-text login__username" required> {{#if err}}
+      <input id="login__username" name="loginusername" type="text" class="input-text login__username" required autofocus> {{#if err}}
       <p>{{err}}</p>
       {{/if}}
       <p id="username-err" class="error"></p>
       <label class="label" for="login__password">Password</label>
-      <input id="login__password" name="loginpassword" type="login__password" class="input-text login__password" required>
+      <input id="login__password" name="loginpassword" type="password" class="input-text login__password" required>
       <p id="login__password-err" class="error"></p>
       {{#if errorMessage}}
-      <p>{{errorMessage}}</p>
+      <p class="error">{{errorMessage}}</p>
       {{/if}}
       <div class="container__button">
         <input type="submit" value="login" class="button"></input>
