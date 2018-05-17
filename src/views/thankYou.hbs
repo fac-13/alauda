@@ -1,5 +1,15 @@
 
-<div class="container__thankYou">
-<h2>Thank you for signing up, {{user}} </h2>
-<p>We will notify you tomorrow morning when your package full of good stuff is ready for you, so that you can start your day inspired!</p>
+<div class="container__message" >
+  <div class="container__bird">
+    <img src="/images/bird.png"  class="bird" alt="">
+  </div>
+  
+  <div class="message">
+   <h4>Thank you for signing up, {{user}} </h4>
+   <p> The gift below is full of interesting articles. You can now start your day inspired!</p>
 </div>
+</div>
+
+<a id="link__randomGift" href="/usercontent/{{user}}">
+  <img class="gift" src="/images/gift_white.svg" alt="click on gift">
+</a>
