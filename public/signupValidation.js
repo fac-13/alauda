@@ -60,8 +60,6 @@ if (window.location.pathname == '/signup') {
   username.addEventListener('focusout', checkUsername);
   password.addEventListener('focusout', checkPw);
   confirmPassword.addEventListener('focusout', checkConfirmPw);
-  underage.addEventListener('click', checkAge);
-  adult.addEventListener('click', checkAge);
 
   form.addEventListener('submit', event => {
     if (!checkUsername()) {
