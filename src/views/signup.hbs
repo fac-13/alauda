@@ -1,27 +1,21 @@
-{{> header}}
 
 <h2>Sign up</h2>
-
-
 
 <section class="container__form">
   <form class="form__signup" action="/signup" method="post" novalidate>
     <label class="label" for="username">Username</label>
-    <br/>
     <input id="username" name="username" type="text" class="input-text signup__username" required autofocus> {{#if err}}
     <p class="error">{{err}}</p>
     {{/if}}
     <p id="username-err" class="error"> </p>
     <label class="label" for="password">Password</label>
-    <br/>
     <input id="password" name="password" type="password" class="input-text signup__password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
       required>
     <p id="password-err" class="error"> </p>
 
     <label class="label" for="confirm-password">Confirm Password</label>
-    <br/>
 
-    <input id="confirm-password" name="confirmPassword" type="password" class="input-text signup__confirm-password" required>
+    <input id="confirm-password" name="confirmPassword" type="password" class="input-text signup__confirm-password" required>    </input>
     <p id="confirm-password-err" class="error"> </p>
 
     <label class="label question" for="time">What time do you wake up?</label>
@@ -48,8 +42,6 @@
     </select>
     <p id="time-err" class="error"></p>
 
-    <br>
-    </input>
 
     <label class="label question" for="like">Let us know what you like:</label>
     <br/>
