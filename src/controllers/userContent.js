@@ -7,7 +7,7 @@ exports.get = async (req, res) => {
     const user = await getUser(username);
     console.log(req.session);
     console.log(user);
-    console.log(content.articles[0].title);
+    // console.log(content.articles[0].title);
     const art = content.articles;
     res.render('usercontent', { art });
   }
