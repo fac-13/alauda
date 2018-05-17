@@ -51,8 +51,6 @@ const fetchApi = async () => {
     writeDataToFile(content);
 };
 
-fetchApi(); 
-
 /**
   * @param  {} data; Writes data that came from API calls into a json file that is stored for a day in the root folder.
 */
@@ -68,7 +66,7 @@ function writeDataToFile(data) {
      * Runs every day at 00:00:00 AM and fetches content from News Api
 */
 const job = new CronJob({
-    cronTime: '00 21 18 * * 1-7',
+    cronTime: '00 00 00 * * 1-7',
     onTick() {
         fetchApi();
         console.log('Cron Job is being done')
