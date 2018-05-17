@@ -13,7 +13,7 @@ const staticAssets = [
   './images/back.svg',
   './images/gift_white.svg',
   './images/logo.svg',
-  './images/bird.png'
+  './images/bird.png',
   '/try',
   '/randomContent',
   './firstContent',
