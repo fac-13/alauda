@@ -13,6 +13,7 @@ const timeErr = document.getElementById('time-err');
 const checkUsername = () => {
   if (username.validity.valueMissing) {
     displayErr(usernameErr, 'Please enter a username');
+    usernameErr.classList.add('error-on');
   } else {
     displayErr(usernameErr, '');
     return true;
@@ -27,6 +28,7 @@ const checkPw = () => {
     );
   } else if (password.validity.valueMissing) {
     displayErr(passwordErr, 'Please enter a password');
+    passwordErr.classList.add('error-on');
   } else {
     displayErr(passwordErr, '');
     return true;
@@ -38,6 +40,7 @@ const checkConfirmPw = () => {
     displayErr(confirmErr, 'Passwords do not match');
   } else if (confirmPassword.validity.valueMissing) {
     displayErr(confirmErr, 'Please confirm your password');
+    confirmErr.classList.add('error-on');
   } else {
     displayErr(confirmErr, '');
     return true;
