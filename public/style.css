@@ -88,13 +88,14 @@ main {
   font-size: 1.5rem;
 }
 
-/************ signup ***********/
+/************ signup/login ***********/
 .container__title {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
 }
+
 .container__form {
   z-index: 10;
   min-width: 90%;
@@ -181,6 +182,16 @@ main {
   margin: 30px;
   display: flex;
   justify-content: center;
+}
+
+.container__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30%;
+}
+.title__login {
+  margin-bottom: 5rem;
 }
 /**************** section ******************/
 .section__content {
