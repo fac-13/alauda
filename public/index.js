@@ -19,7 +19,7 @@ const fetchContent = (url) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Data:", data)
+      console.log("New Content Data:", data)
       content = data;
       storeContent(content);
       renderContent(content);
@@ -31,7 +31,7 @@ const fetchContent = (url) => {
  * Check if there is a service worker and register it
  */
 if ('serviceWorker' in navigator) {
-  fetchContent('/api/firstContent')
+  fetchContent('/api/tryContent')
   navigator.serviceWorker.register('/sw.js').then(() => {
     console.log('Service Worker Registered');
   });
