@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const home = require('./home');
@@ -22,7 +23,7 @@ router.get('/', home.get);
 router.get('/randomGift', randomGift.get);
 router.get('/randomContent', randomContent.get);
 router.get('/api/firstContent', firstContent.get);
-router.get('/usercontent', userContent.get);
+router.get('/usercontent/:username', userContent.get);
 // router.get('/api/regularcontent', getsubscribedcontent.get);
 // router.get('api/content', regularContent.get);
 router.get('/signup', signup.get);
