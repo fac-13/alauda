@@ -1,124 +1,293 @@
-:root{
-    --blue:#00A8BB;
-    --green:#15c89b;
-    --purple:#801C7C;
+:root {
+  --blue: #00a8bb;
+  --green: #15c89b;
+  --lightgreen: rgba(122, 221, 196, 0.44);
+  --purple: #801c7c;
 }
 
-body{
+body {
   height: 100vh;
   background: linear-gradient(var(--green), var(--blue)), no-repeat;
   color: var(--purple);
-  font-size: 1.2rem;
   font-family: 'Oxygen', sans-serif;
   animation: appear 1s ease-in;
-}
-.nav{
-  min-width:100%;
+  margin:0;
+  padding: 0;
   display:flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.nav {
+  z-index: 10vh;
+  min-width: 100%;
+  height: 10%;
+  background-color: var(--green);
+  position: fixed;
+  top:0;
 }
 
-main{
-  height: 90vh;
+.back_icon {
+  height: 30px;
+}
+
+.container__back {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
   display: flex;
-  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lightgreen);
+}
+
+main {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  
+}
+.container__brand {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.container__logo{
+.container__logo {
   margin-top: 3rem;
-  height:8rem;;
-  width:12rem;
+  height: 8rem;
+  width: 12rem;
   background-image: url('images/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.container__blurb{
- z-index: 10;
- max-width: 90%;
- background-color:rgba(122, 221, 196, 0.44);
- border-radius: 10px;
- padding: 5px;
-}
-
-.button{
-  min-height:60px;
-  min-width:230px;
+.button {
+  min-height: 40px;
+  min-width: 230px;
   border-radius: 20px;
   border: 1px solid var(--purple);
   background-color: transparent;
-  color:var(--purple);
+  color: var(--purple);
   text-transform: lowercase;
+  font-size: 1rem;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--purple);
+}
+
+.button:active {
+  outline: none;
+  box-shadow: 0 0 5px var(--purple);
+  transform: scale(1.05);
+}
+
+.button__tryme {
+  height: 60px;
+  width: 230px;
   font-size: 2rem;
 }
 
-.button:focus{
-  outline:none;
-  box-shadow: 0 0 5px var(--purple);
-}
-
-.button:active{
-  outline:none;
-  box-shadow: 0 0 5px var(--purple);
-  transform:scale(1.05);
-}
-
-.button__tryme{
-  height: 50px;
-  width: 230px;
-}
-
-.link, .link:visited{
+.link,
+.link:visited {
   color: var(--purple);
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
-.section__content{
-  background-color: transparent;
+/************ signup/login ***********/
+.container__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5px;
-  display:flex;
-  flex-wrap: wrap;
-  overflow: scroll;
-  max-height:90%;
-  width: 90%;
 }
 
-.gift{
+.container__form {
+  z-index: 10;
+  min-width: 90%;
+  background-color: rgba(122, 221, 196, 0.44);
+  border-radius: 10px;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.label {
+  display: inline-block;
+  margin: 5px;
+  font-size: 1.2rem;
+}
+.input-text {
+  min-width: 300px;
+  line-height: 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--purple);
+}
+
+.input-text:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--purple);
+}
+
+.error {
+  font-size: 0.7rem;
+  color: #fff;
+  margin: 12px;
+  align-self: center;
+}
+
+.error-on {
+  margin: 0px;
+  animation: appear 1s ease-in;
+}
+
+.timebox {
+  background-color: #fafafa;
+  height: 2rem;
+  color: var(--purple);
+  font-size: 1rem;
+}
+
+.timebox:focus {
+  outline: none;
+}
+
+.container__checkbox {
+  display: grid;
+  grid-template-columns: 10% 40% 10% 40%;
+  grid-template-rows: repeat(4, 25%);
+  margin: 10px;
+}
+
+.regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  height: 17px;
+  width: 17px;
+  border-radius: 3px;
+}
+.regular-checkbox:focus {
+  outline: none;
+}
+.regular-checkbox:checked {
+  background-color: var(--purple);
+}
+
+/* doesnt work?!?! */
+.input__signup {
+  align-self: center;
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+.container__button {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.container__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30%;
+}
+.title__login {
+  margin-bottom: 5rem;
+}
+/**************** randomGift  ******************/
+.container__message{
+  margin-top: 30px;
+}
+.message{
+  color: #fafafa;
+  background-color: var(--purple);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+.container__bird{
+  border: 1.5px solid var(--purple);
+  border-radius: 50%;
+  height: 50px;
+  width:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.bird{
+  height: 40px;
+  width: 40px;
+}
+/**************** content  ******************/
+.section__content {
+  background-color: transparent;
+  padding:5px;
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
+  max-height: 90%;
+  width: 100%;
+}
+
+.content__articles {
+  background-color:#fafafa;
+  animation: appear 1s ease-in;
+  padding: 10px;
+}
+.section__content::-webkit-scrollbar {
+  display: none;
+}
+
+.gift {
   animation: gift 7s infinite;
 }
 
-.img__giphy{
-  margin-left:5px;
+.img__giphy {
+  margin-left: 5px;
   border-radius: 5px;
   animation: appear 1s ease-in;
 }
 
-.content__articles{
-  animation: appear 1s ease-in;
-}
 
-.img__article{
+.img__article {
   max-width: 100%;
 }
 
-.link__title, .link_visited{
+.link__title,
+.link_visited {
   text-decoration: none;
-  color: var(--purple)
+  color: var(--purple);
 }
-@keyframes gift{
-  0%{transform: scale(1); }
-  50%{transform:scale(1.2);}
-  100%{transform:scale(1);}
+@keyframes gift {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-@keyframes appear{
-  0%{opacity: 0;}
-  100%{opacity:1;}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@media(min-width: 700px){
-  .section__content{
+@media (min-width: 700px) {
+  .section__content {
     max-width: 60%;
   }
 }
