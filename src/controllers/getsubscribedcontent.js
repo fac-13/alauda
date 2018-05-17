@@ -7,27 +7,32 @@ const query = 'inspiration';
 const newsUrl = `https://newsapi.org/v2/everything?q=${query}&totalResults=10&apiKey=${process.env.NEWS_KEY}`;
 
 var content = {
-    'hello': 'Julia'
-};
+    "Tech": [],
+    "Nature": [],
+    "Science": [],
+    "Travel": [],
+    "Psychology": [],
+    "Movies": [],
+    "Art": [],
+    "Books": []
+;
 /**
- * @param  {} url; make an API call
+ * @param  {} url; make an API call and update content object
  */
 const fetchApi = (url) => {
   fetch(url)
     .then(response => response.json())
     .then((json) => {
-        
-        getjsoninjson(json);
         content = json;
-      console.log('Consolelogging from getsubscribeduser', json);
     });
 };
 
-// fs.writeFileSync('content.json', JSON.stringify(content), (err) => {
-//     if(err) console.log(err);
-// });
+writeDataToFile(content);
 
-function getjsoninjson(data) {
+/**
+  * @param  {} data; Writes data that came from API calls into a json file that is stored for a day in the root folder.
+*/
+function writeDataToFile(data) {
     try {
         fs.writeFileSync('content.json', JSON.stringify(data));
     } catch (err) {
@@ -48,7 +53,7 @@ const job = new CronJob({
 });
 
 job.start();
-// fetchApi(newsUrl);
+
 exports.get = (req, res) => {
   res.send(content);
 };
