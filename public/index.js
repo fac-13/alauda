@@ -61,7 +61,8 @@ const checkOffline = () => {
       dialog.close();
     }, 4000);
   } else {
-    fetchContent('/api/content');
+    console.log("You are online");
+    // fetchContent('/api/content'); 
   }
 }
 

@@ -16,22 +16,24 @@ const fetchApi = (url) => {
     .then(response => response.json())
     .then((json) => {
       content.news = json.articles;
+      console.log('writing from regular content', JSON.stringify(json));
     });
 };
 /*
      * Runs every day at 00:00:00 AM and fetches content from News Api
 */
 const job = new CronJob({
-  cronTime: '00 00 00 * * 1-7',
+  cronTime: '00 20 14 * * 1-7',
   onTick() {
-    fetchApi(newsUrl);
+    // fetchApi(newsUrl);
+    console.log('Cron Job is being done')
   },
   start: false,
   timeZone: 'Europe/London',
 });
 
 job.start();
-
+fetchApi(newsUrl);
 exports.get = (req, res) => {
   res.send(content);
 };

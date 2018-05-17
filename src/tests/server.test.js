@@ -28,14 +28,14 @@ describe('Test the home path', () => {
       }));
 });
 
-describe('Test the api path', () => {
-  test('It should send the content object', () =>
-    request(app)
-      .get('/api/content')
-      .then((response) => {
-        expect(typeof response).toBe('object');
-      }));
-});
+// describe('Test the api path', () => {
+//   test('It should send the content object', () =>
+//     request(app)
+//       .get('/api/content')
+//       .then((response) => {
+//         expect(typeof response).toBe('object');
+//       }));
+// });
 
 describe('Test the try path', () => {
   test('It should send the response after the GET method executes with status code 200', () =>

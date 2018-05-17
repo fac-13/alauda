@@ -1,0 +1,15 @@
+  <nav class="nav">
+      <a href="/try" class="goBack"><img src="./images/back.svg" alt="go back"></a>
+  </nav>
+<section>
+  <ul>
+    {{#each art}}
+    <li class="content__article">
+      <h2 class="title">{{this.title}}</h2>
+      <img class="img__article" src={{this.urlToImage}}>
+      <h2 class="content__article">{{this.description}}</h2>
+    </li>
+    {{/each}}
+  </ul>
+
+</section>
