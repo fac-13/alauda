@@ -14,7 +14,11 @@ exports.post = (req, res) => {
     .then(password => newUser.create({
       username, password, like,
     }))
-    .then(() => res.render('thankYou', { user: username }))
+    .then(() => {
+      req.session.username = username;
+      req.session.loggedIn = true;
+      res.redirect(`/thankYou/${username}`);
+    })
     .catch((err) => {
       if (err.message.includes('duplicate')) {
         res.render('signup', { err: 'This username is already taken!' });
@@ -24,3 +28,4 @@ exports.post = (req, res) => {
       }
     });
 };
+

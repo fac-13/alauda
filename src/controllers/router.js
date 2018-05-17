@@ -30,7 +30,7 @@ router.get('/signup', signup.get);
 router.post('/signup', signup.post);
 router.get('/login', login.get);
 router.post('/login', login.post);
-router.get('/thankYou', thankYou.get);
+router.get('/thankYou/:username', thankYou.get);
 router.get('/profile/:username', profile.get);
 router.get('/logout', logout.get);
 router.get('/delete', deleteProfile.get);
