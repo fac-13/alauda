@@ -1,14 +1,14 @@
-  <nav class="nav">
-      <a href="/try" class="goBack"><img src="./images/back.svg" alt="go back"></a>
-  </nav>
+
 <section>
-  <ul>
+  <ul class="container__list">
     {{#each likedContent}}
       {{#each this}}
-        <li class="content__article">
-          <h2 class="title">{{this.title}}</h2>
+        <li class="content__articles list__item">
+           <a href="{{this.url}}" target="_blank" class="link__title">
+             <h3 class="title">{{this.title}}</h3>
+             </a>
           <img class="img__article" src={{this.urlToImage}}>
-          <h2 class="content__article">{{this.description}}</h2>
+          <p class="content__article">{{this.description}}</p>
         </li>
       {{/each}}
     {{/each}}
