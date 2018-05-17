@@ -11,8 +11,8 @@ exports.get = async (req, res) => {
     const { username, loggedIn } = req.session;
     try {
       const user = await getUser(username);
-      art = getUserContent(user.like);
-      res.send(art);
+      const likedContent = getUserContent(user.like);
+      res.render('usercontent', { likedContent });
     } catch (err) {
       console.log(err);
     }

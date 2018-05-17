@@ -3,13 +3,25 @@
   </nav>
 <section>
   <ul>
-    {{#each art}}
-    <li class="content__article">
-      <h2 class="title">{{this.title}}</h2>
-      <img class="img__article" src={{this.urlToImage}}>
-      <h2 class="content__article">{{this.description}}</h2>
-    </li>
+    {{#each likedContent}}
+      {{#each this}}
+        <li class="content__article">
+          <h2 class="title">{{this.title}}</h2>
+          <img class="img__article" src={{this.urlToImage}}>
+          <h2 class="content__article">{{this.description}}</h2>
+        </li>
+      {{/each}}
     {{/each}}
   </ul>
 
 </section>
+
+
+{{!-- {{#each ph}}
+....
+.....
+    {{#each fecha}}
+        {{this}} //This would be the value of each DATE in the array
+    {{/each}}  
+
+{{/each}} --}}
