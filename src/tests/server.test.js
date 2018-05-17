@@ -18,7 +18,7 @@ describe('Test the home path', () => {
     request(app)
       .get('/')
       .then((response) => {
-        expect(response.text.includes('<a class="link" href="/try"><button id="button__tryMe" class="button button__tryme">Try Me</button></a>')).toBe(true);
+        expect(response.text.includes('button')).toBe(true);
       }));
   test('It should produce a page with a button that has id button__tryMe', () =>
     request(app)
@@ -40,7 +40,7 @@ describe('Test the home path', () => {
 describe('Test the try path', () => {
   test('It should send the response after the GET method executes with status code 200', () =>
     request(app)
-      .get('/try')
+      .get('/randomGift')
       .then((response) => {
         expect(response.statusCode).toBe(200);
       }));
