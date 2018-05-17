@@ -9,7 +9,6 @@ exports.post = async (req, res) => {
   const { loginusername, loginpassword } = req.body;
   try {
     const foundUser = await getUser(loginusername);
-    console.log(foundUser);
     bcrypt.compare(loginpassword, foundUser.password, function(err, result) {
       if (result) {
         req.session.username = loginusername;
