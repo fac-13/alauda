@@ -9,20 +9,16 @@ exports.post = async (req, res) => {
   const { loginusername, loginpassword } = req.body;
   try {
     const foundUser = await getUser(loginusername);
-    bcrypt.compare(loginpassword, foundUser.password, function(err, result) {
+    bcrypt.compare(loginpassword, foundUser.password, (err, result) => {
       if (result) {
         req.session.username = loginusername;
         req.session.loggedIn = true;
         res.redirect(`/usercontent/${loginusername}`);
       } else {
-        res.render('login', {
-          errorMessage: 'Password is incorrect'
-        });
+        res.render('login', { errorMessage: 'Password is incorrect', backLink: '/' });
       }
     });
   } catch (err) {
-    res.render('login', {
-      errorMessage: 'User does not exist',
-    });
+    res.render('login', {errorMessage: 'User does not exist', backLink: '/' });
   }
 };
