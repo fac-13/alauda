@@ -1,17 +1,27 @@
 const content = require('../../content.json');
+const { getUser } = require('./../model/queries/getUser');
+
+
+const getUserContent = (likes) => {
+  return likes.reduce((acc, item) => (acc[item] = content[item], acc), {});
+}
 
 exports.get = async (req, res) => {
-    if (req.session.length > 0) 
-    {
-        const { username, loggedIn } = req.session;
-        const user = await getUser(username);
-        console.log(req.session);
-        console.log(user);
-        console.log(content.articles[0].title);
-        let art = content.articles;
-        res.render('usercontent', { art });
+  if (req.session.length > 0) {
+    const { username, loggedIn } = req.session;
+    try {
+      const user = await getUser(username);
+      art = getUserContent(user.like);
+      res.send(art);
+    } catch (err) {
+      console.log(err);
     }
+  }
 };
+
+    // // console.log(content.articles[0].title);
+    // let art = content.articles;
+    // res.render('usercontent', { art });
 
 
 // exports.get = async (req, res) => {
