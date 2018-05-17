@@ -246,6 +246,16 @@ main {
   display: none;
 }
 
+.container__list{
+  margin: 0;
+  padding:0;
+}
+.list__item{
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+
 .gift {
   animation: gift 7s infinite;
 }

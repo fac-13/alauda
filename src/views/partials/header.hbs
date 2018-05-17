@@ -2,9 +2,15 @@
 
   <a href={{backLink}} class="goBack">
     <div class="container__back">
-      <img class="back_icon" src="./images/back_min.svg" alt="go back">
+      <img class="back_icon" src="/images/back_min.svg" alt="go back">
     </div>
   </a>
+  {{#if usercontent}}
+   <a href="/profile/{{username}}">
+    <div class="container__back">
 
+    </div>
+   </a>
+  {{/if}}
 
 </nav>

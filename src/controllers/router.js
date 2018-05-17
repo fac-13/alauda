@@ -1,5 +1,4 @@
 const express = require('express');
-// const path = require('path');
 
 const router = express.Router();
 
@@ -25,7 +24,8 @@ router.get('/', home.get);
 router.get('/randomGift', randomGift.get);
 router.get('/randomContent', randomContent.get);
 router.get('/api/firstContent', firstContent.get);
-router.get('/usercontent', userContent.get);
+router.get('/usercontent/:username', userContent.get);
+// router.get('api/content', regularContent.get);
 router.get('/signup', signup.get);
 router.post('/signup', signup.post);
 router.get('/login', login.get);

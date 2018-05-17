@@ -13,7 +13,7 @@ exports.post = async (req, res) => {
       if (result) {
         req.session.username = loginusername;
         req.session.loggedIn = true;
-        res.redirect('/usercontent');
+        res.redirect(`/usercontent/${loginusername}`);
       } else {
         res.render('login', {
           errorMessage: 'Password is incorrect'
@@ -22,7 +22,7 @@ exports.post = async (req, res) => {
     });
   } catch (err) {
     res.render('login', {
-      errorMessage: 'User does not exist'
+      errorMessage: 'User does not exist',
     });
   }
 };
