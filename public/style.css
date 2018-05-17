@@ -99,11 +99,11 @@ main {
 .container__form {
   z-index: 10;
   min-width: 90%;
-  min-height: 80%;
+  /* min-height: 80%; */
   background-color: rgba(122, 221, 196, 0.44);
   border-radius: 10px;
   padding: 1rem;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
@@ -194,7 +194,31 @@ main {
 .title__login {
   margin-bottom: 5rem;
 }
-/**************** section ******************/
+/**************** randomGift  ******************/
+.container__message{
+
+}
+.message{
+  color: #fafafa;
+  background-color: var(--purple);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+.container__bird{
+  border: 1.5px solid var(--purple);
+  border-radius: 50%;
+  height: 50px;
+  width:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.bird{
+  height: 40px;
+  width: 40px;
+}
+/**************** content  ******************/
 .section__content {
   background-color: transparent;
   padding: 5px;
