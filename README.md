@@ -20,7 +20,7 @@ The original idea was to build an alarm clock that is linked with the clock of o
 | :------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
 |  Giulia - DevOps   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi)  |
 |  Ivi - UX  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction) |
-|   Katia - Scrum Master  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://linkedin.com/favicon.ico)](https://twitter.com/4theLoveOfCode)    |                                                                              |
+|   Katia - Scrum Master  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode)    |                                                                              |
 | Parissa - QA | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
 
 ## HOW
