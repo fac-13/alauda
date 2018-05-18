@@ -16,7 +16,7 @@ const staticAssets = [
   './images/bird.png',
   '/randomGift',
   '/randomContent',
-  '/firstContent',
+  '/tryContent',
   '/profile/',
 ];
 

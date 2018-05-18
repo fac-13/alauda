@@ -36,6 +36,7 @@ body {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +45,7 @@ body {
 
 main {
   height: 500px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,7 +70,7 @@ main {
 
 .button {
   min-height: 40px;
-  min-width: 230px;
+  width: 230px;
   border-radius: 20px;
   border: 1px solid var(--purple);
   background-color: transparent;
@@ -98,8 +100,14 @@ main {
 .link:visited {
   color: var(--purple);
   font-size: 1.5rem;
+  text-decoration: none!important;
 }
 
+.initial{
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 /************ signup/login ***********/
 .container__title {
   display: flex;
@@ -206,7 +214,7 @@ main {
 }
 /**************** randomGift  ******************/
 .container__message{
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .message{
   color: #fafafa;
@@ -244,6 +252,7 @@ main {
   animation: appear 1s ease-in;
   padding: 10px;
 }
+
 .section__content::-webkit-scrollbar {
   display: none;
 }
@@ -252,6 +261,7 @@ main {
   margin: 0;
   padding:0;
 }
+
 .list__item{
   list-style: none;
   margin-bottom: 5px;
@@ -278,6 +288,47 @@ main {
   text-decoration: none;
   color: var(--purple);
 }
+
+/****************** profile **********************/
+
+.container__editprofile{
+  width: 60%;
+padding-top: 30px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.container__user{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.container__avatar{
+  background-color: var(--lightgreen);
+  border-radius:50%;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.container__likes{
+  background-color: var(--lightgreen);
+  height: 100px;
+  min-width: 90%;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.button__edit{
+  height: 50px;
+  width: 80px;
+}
+
 @keyframes gift {
   0% {
     transform: scale(1);
