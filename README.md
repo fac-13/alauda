@@ -3,7 +3,7 @@
 # Alauda 
 ![Alauda logo](https://github.com/fac-13/allauda/blob/master/public/images/icons/icon-384x384.png)
 
-## WHAT
+## From a music app to New(s) Internet
 
 ### Problem statement
 Our user needs a way to have access to positive and inspiring content in the morning so that they don't have to search it themselves. 
