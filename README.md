@@ -27,9 +27,13 @@ The original idea was to build an alarm clock that is linked with the clock of o
 |   Katia - **Scrum Master**  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode)  |                                                                              |
 | Parissa - **QA** | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
 
-## HOW
+## HOW to run the app locally
 
---how to run the app locally --
+* Fork the repo and navigate to your local folder where you would like to store its local copy
+* Clone the repo
+`git clone blah`
+* Set up the API keys. This projects uses .env file where you should store YOUR News API key. You can [get the API key here](https://newsapi.org/).
+
 
 
 ## Tech stack
