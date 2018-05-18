@@ -4,20 +4,23 @@
 ![Alauda logo](https://github.com/fac-13/allauda/blob/master/public/images/icons/icon-384x384.png)
 
 
-
 ### Problem statement
 Our user needs a way to have access to positive and inspiring content in the morning so that they don't have to search it themselves. 
 
 ### Our solution
 [Alauda](https://alauda.herokuapp.com/) is a Progressive Web App which, every day, present users with a selection of articles matching their interests, using the News API.
 
+### What is a PWA?
+> PWA are web applications that take advantage of new features supported by modern browsers, such as service workers and web app manifests, to appear to the user like native mobile applications. In this sense, PWA combine the best of the web and the best of apps.
+
 ### From a music app to new(s) internet in a few pivots (the history of development)
 
-- The original idea was to build an alarm clock that is linked with the clock of one's mobile and plays different music or sounds every morning. We planned to make it a progressive web app. We then realised that PWA is not fit for purpose and changed the app idea.
+- The original idea was to build a PWA alarm clock linked with the clock of one's mobile phone which would play different music or sounds every morning. However, we realised that PWA were not fit for purpose and changed the app idea.
 
-- We decided to make a PWA that send the subscribed users push notifications every morning containing music and pictures the users might like. After exploring music APIs we abandonded this idea. Heads up - we are still waiting for an API key from the Free Music Archive (it has been three weeks).
+- We then decided to build a PWA which would send to its users a push notification every morning containing music and pictures they might like. After exploring various music APIs we unfortunately had to abandon the idea. Heads up - we are still waiting for an API key from the Free Music Archive (it has been three weeks :disappointed:). 
 
-- We then decided to use News APIs and send users positive news they might be interested in. Then we explored push notifications and realised that we don't have time to figure out how to use one in our project.
+- We then decided to use the News API and send users positive news they might be interested in. However, as we explored push notifications we realised that we didn't have time to include them in our sprint. The final MVP is a PWA where users can find articles that match their interests. 
+
 
 ### Screenshot
 
@@ -32,7 +35,7 @@ Our user needs a way to have access to positive and inspiring content in the mor
 |   Katia - **Scrum Master**  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode)  |                                                                              |
 | Parissa - **QA** | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
 
-## HOW to run the app locally
+## How to run the app locally
 
 * Make sure you have [MongoDB](https://www.mongodb.com) and [Node JS](https://nodejs.org/en/) set up on your local computer.
 * Fork the repo and navigate to your local folder where you would like to store its local copy
