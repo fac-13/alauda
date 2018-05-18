@@ -17,7 +17,8 @@ const staticAssets = [
   '/randomGift',
   '/randomContent',
   '/tryContent',
-  '/profile/',
+  // '/profile/',
+  // '/userContent/', 
 ];
 
 /**
@@ -29,11 +30,22 @@ self.addEventListener('install', async (event) => {
 });
 
 /**
- * Intercepts all fetch requests and respond with the cached content
+ * Intercepts all fetch requests and respond with the appropriate caching strategy. 
+ * Cache first for static assets and network first for dynamic content (e.g. api calls responses)
  */
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const req = event.request;
-  event.respondWith(cacheFirst(req));
+  const url = new URL(req.url);
+  //fetching from our own site (from our server) --> e.g. for static assets 
+  //excluding fetch requests for api content 
+  if (url.origin == location.origin && req.url.indexOf('api') == -1) {
+    console.log("Caching URL", url)
+    event.respondWith(cacheFirst(req));
+  }
+  //fetching from external sources (e.g. fontawesome, api calls)
+  else {
+    event.respondWith(networkFirst(req));
+  }
 });
 
 
@@ -41,6 +53,29 @@ self.addEventListener('fetch', (event) => {
  * Checks if there is a match in the cache, if so returns the cached content, otherwise makes a network request
  */
 async function cacheFirst(req) {
+  console.log("Cache first reached")
   const cachedResponse = await caches.match(req);
   return cachedResponse || fetch(req);
 }
+
+
+/*
+ * Check if the content can be fetched from the network, if so cache it and return the content,
+ *  otherwise check if there is an existing match in the cache
+ */
+async function networkFirst(req) {
+  console.log("Network first reached")
+  const cache = await caches.open('content');
+  try {
+    const res = await fetch(req);
+    cache.put(req, res.clone());
+    return res;
+  }
+  catch (error) {
+    const cachedResponse = await cache.match(req);
+    return cachedResponse || await caches.match("./manifest.json");
+  }
+}
+
+
+
