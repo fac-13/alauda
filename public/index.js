@@ -4,9 +4,9 @@ const main = document.querySelector('main');
 const tryMeButton = document.getElementById('button__tryMe');
 const randomGift = document.getElementById('link__randomGift');
 
-let content = localStorage.getItem('content')
-  ? JSON.parse(localStorage.getItem('content'))
-  : {};
+// let content = localStorage.getItem('content')
+//   ? JSON.parse(localStorage.getItem('content'))
+//   : {};
 
 
 
@@ -20,7 +20,7 @@ const fetchContent = (url) => {
     })
     .then((data) => {
       content = data;
-      storeContent(content);
+      // storeContent(content);
       renderContent(content);
     });
 };
@@ -51,18 +51,18 @@ if (window.location.pathname == '/try') {
  * Check if user is online, if offline open dialog box
  */
 const checkOffline = () => {
-  if (!window.navigator.onLine) {
-    const dialog = document.querySelector('dialog');
-    setTimeout(() => {
-      dialog.show();
-    }, 500);
-    setTimeout(() => {
-      dialog.close();
-    }, 4000);
-  } else {
-    console.log("You are online");
-    // fetchContent('/api/content'); 
-  }
+//   if (!window.navigator.onLine) {
+//     const dialog = document.querySelector('dialog');
+//     setTimeout(() => {
+//       dialog.show();
+//     }, 500);
+//     setTimeout(() => {
+//       dialog.close();
+//     }, 4000);
+//   } else {
+//     console.log("You are online");
+    fetchContent('/api/tryContent'); 
+//   }
 }
 
 
@@ -70,9 +70,9 @@ const checkOffline = () => {
 /**
  * stores content in localStorage
  */
-const storeContent = () => {
-  localStorage.setItem('content', JSON.stringify(content));
-};
+// const storeContent = () => {
+//   localStorage.setItem('content', JSON.stringify(content));
+// };
 
 
 /**
