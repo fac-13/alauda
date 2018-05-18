@@ -29,7 +29,7 @@ The original idea was to build an alarm clock that is linked with the clock of o
 
 ## HOW to run the app locally
 
-
+* Make sure you have [MongoDB](https://www.mongodb.com) and [Node JS](https://nodejs.org/en/) set up on your local computer.
 * Fork the repo and navigate to your local folder where you would like to store its local copy
 * Clone the repo
 `git clone git@github.com:fac-13/allauda.git`
