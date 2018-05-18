@@ -34,6 +34,7 @@ The original idea was to build an alarm clock that is linked with the clock of o
 * Clone the repo
 `git clone git@github.com:fac-13/allauda.git`
 * Set up the API keys. This projects uses .env file where you should store YOUR News API key. You can [get the API key here](https://newsapi.org/).
+* Set up the pathe to your local database. An exmple of a path to your local database that should be in your .env file is `DATABASE_URL=mongodb://localhost/alaudadb`
 * `npm install` or `npm i` to download Node modules that are used by the app locally.
 * `npm run dev` to run the app locally.
 * You can view the app on http://localhost:3000/
