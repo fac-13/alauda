@@ -14,28 +14,19 @@ Our user needs a way to have access to positive and inspiring content in the mor
 ### From a music app to new(s) internet in a few pivots
 The original idea was to build an alarm clock that is linked with the clock of one's mobile and plays different music or sounds every morning. We planned to make it a progressive web app. We then realised that PWA is not fit for purpose and changed the app idea.
 
-### The team
+### Who - our team
 
 |   Name   |                                                          Github                                                                                                      |                                   Twitter                                    |
 | :------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
-|  Giulia - DevOps   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi)  |
-|  Ivi - UX  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction) |
-|   Katia - Scrum Master  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode)    |                                                                              |
-| Parissa - QA | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
+|  Giulia - **DevOps**   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi){:target="_blank"} |
+|  Ivi - **UX**  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction) |
+|   Katia - **Scrum Master**  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode){:target="_blank"}    |                                                                              |
+| Parissa - **QA** | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
 
 ## HOW
 
 --how to run the app locally --
 
-
-## WHO
-
-Our team and the roles we performed: 
-
-- QA: Parissa
-- DevOps: Giulia
-- Scrum master: Katia
-- UX: Ivi
 
 ## Tech stack
  
