@@ -10,13 +10,14 @@ const staticAssets = [
   './images/icons/icon-192x192.png',
   './images/icons/icon-384x384.png',
   './images/icons/icon-512x512.png',
-  './images/back_min.svg', 
+  './images/back_min.svg',
   './images/back.svg',
   './images/gift_white.svg',
   './images/logo.svg',
+  './images/bird_circle.png',
   './images/bird.png',
   '/randomGift',
-  '/randomContent'
+  '/randomContent',
 ];
 
 /**
@@ -28,19 +29,19 @@ self.addEventListener('install', async (event) => {
 });
 
 /**
- * Intercepts all fetch requests and respond with the appropriate caching strategy. 
+ * Intercepts all fetch requests and respond with the appropriate caching strategy.
  * Cache first for static assets and network first for dynamic content (e.g. api calls responses)
  */
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const req = event.request;
   const url = new URL(req.url);
-  //fetching from our own site (from our server) --> e.g. for static assets 
-  //excluding fetch requests for api content 
+  // fetching from our own site (from our server) --> e.g. for static assets
+  // excluding fetch requests for api content
   if (url.origin == location.origin && req.url.indexOf('api') == -1) {
-    console.log("Caching URL", url)
+    console.log('Caching URL', url);
     event.respondWith(cacheFirst(req));
   }
-  //fetching from external sources (e.g. fontawesome, api calls)
+  // fetching from external sources (e.g. fontawesome, api calls)
   else {
     event.respondWith(networkFirst(req));
   }
@@ -51,7 +52,7 @@ self.addEventListener('fetch', event => {
  * Checks if there is a match in the cache, if so returns the cached content, otherwise makes a network request
  */
 async function cacheFirst(req) {
-  console.log("Cache first reached")
+  console.log('Cache first reached');
   const cachedResponse = await caches.match(req);
   return cachedResponse || fetch(req);
 }
@@ -62,18 +63,15 @@ async function cacheFirst(req) {
  *  otherwise check if there is an existing match in the cache
  */
 async function networkFirst(req) {
-  console.log("Network first reached")
+  console.log('Network first reached');
   const cache = await caches.open('content');
   try {
     const res = await fetch(req);
     cache.put(req, res.clone());
     return res;
-  }
-  catch (error) {
+  } catch (error) {
     const cachedResponse = await cache.match(req);
-    return cachedResponse || await caches.match("./manifest.json");
+    return cachedResponse || await caches.match('./manifest.json');
   }
 }
-
-
 
