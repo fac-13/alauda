@@ -16,24 +16,20 @@ The original idea was to build an alarm clock that is linked with the clock of o
 
 ### Screenshot
 
-![Alauda screenshot](https://i.imgur.com/OmC6MKa.gifv)
+![Alauda screenshot](https://user-images.githubusercontent.com/29815092/40229539-6fc01346-5a8c-11e8-8a71-5bb55c97950b.gif)
 
 ### Who - our team
 
 |   Name   |                                                          Github                                                                                                      |                                   Twitter                                    |
 | :------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
-|  Giulia - **DevOps**   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi) |
-|  Ivi - **UX**  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction)|
-|   Katia - **Scrum Master**  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode)  |                                                                              |
-| Parissa - **QA** | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato)  |
+|  Giulia - **DevOps**   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi){target="_blank"} |
+|  Ivi - **UX**  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction){target="_blank"}|
+|   Katia - **Scrum Master**  |   [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/missKatiaPunter)   |   [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/4theLoveOfCode){target="_blank"}   |                                                                              |
+| Parissa - **QA** | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/Parissai)  | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/Sottotitolato "title" target="_blank")  |
 
-## HOW to run the app locally
+## HOW
 
-* Fork the repo and navigate to your local folder where you would like to store its local copy
-* Clone the repo
-`git clone git@github.com:fac-13/allauda.git`
-* Set up the API keys. This projects uses .env file where you should store YOUR News API key. You can [get the API key here](https://newsapi.org/).
-
+--how to run the app locally --
 
 
 ## Tech stack
