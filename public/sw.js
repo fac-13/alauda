@@ -16,10 +16,7 @@ const staticAssets = [
   './images/logo.svg',
   './images/bird.png',
   '/randomGift',
-  '/randomContent',
-  // '/tryContent',
-  // '/profile/',
-  // '/userContent/', 
+  '/randomContent'
 ];
 
 /**
