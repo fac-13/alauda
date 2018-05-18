@@ -11,7 +11,7 @@ exports.get = async (req, res) => {
       const user = await getUser(username);
       const likedContent = getUserContent(user.like);
       res.render('usercontent', {
-        likedContent, usercontent: true, username, initial,
+        likedContent, usercontent: true, backLink: '/login', username, initial,
       });
     } catch (err) {
       const error = err.message;
