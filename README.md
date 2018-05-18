@@ -16,7 +16,7 @@ The original idea was to build an alarm clock that is linked with the clock of o
 
 ### The team
 
-|   Name   |                                                          Github                                                           |                                             Linkedin                                             |                                   Twitter                                    |
+|   Name   |                                                          Github                                                                                                      |                                   Twitter                                    |
 | :------: | :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
 |  Giulia - DevOps   | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/GiuliaTeggi)  |
 |  Ivi - UX  | [![Foo](https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png)](https://github.com/isnotafunction) | [![Foo](https://twitter.com/favicon.ico)](https://twitter.com/isnotafunction) |
