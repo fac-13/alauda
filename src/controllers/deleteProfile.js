@@ -5,12 +5,11 @@ exports.get = async (req, res) => {
   try {
     await deleteUser(username);
     req.session = null;
-    res.render('deleteProfile');
+    res.render('deleteProfile', { backLink: '/' });
   } catch (err) {
     res.render('deleteProfile', {
       errorMessage: 'User does not exist',
     });
   }
-
 };
 
