@@ -1,8 +1,6 @@
-
-<h2>Sign up</h2>
-
 <section class="container__form">
-  <form class="form__signup" action="/signup" method="post" novalidate>
+ <h2 class="title__signup">Sign up</h2>  
+ <form class="form__signup" action="/signup" method="post" novalidate>
     <label class="label" for="username">Username</label>
     <input id="username" name="username" type="text" class="input-text signup__username" required autofocus> {{#if err}}
     <p class="error">{{err}}</p>

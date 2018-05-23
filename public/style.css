@@ -15,7 +15,6 @@ body {
   padding: 0;
   display:flex;
   flex-direction: column;
-  align-items: center;
 }
 .nav {
   z-index: 10vh;
@@ -44,34 +43,34 @@ body {
 }
 
 main {
-  height: 500px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-  
+  margin-top: 10vh;
+  height:90vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, 1fr); 
 }
 .container__brand {
+  grid-column: 3/4;
+  grid-row: 2/4;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .container__logo {
-  margin-top: 3rem;
   height: 8rem;
-  width: 12rem;
+  width: 11rem;
   background-image: url('images/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
 }
 
 .button {
-  min-height: 40px;
-  width: 230px;
-  border-radius: 20px;
+  min-height: 2rem;
+  width: 12rem;
+  border-radius: 10px;
   border: 1px solid var(--purple);
   background-color: transparent;
   color: var(--purple);
@@ -90,42 +89,63 @@ main {
   transform: scale(1.05);
 }
 
+.link__tryMe {
+  grid-column: 3/4;
+  grid-row: 5/6;
+  justify-self: center;
+  align-self: center;
+}
+
 .button__tryme {
   height: 60px;
   width: 230px;
   font-size: 2rem;
+}
+.p__links {
+  text-align: center;
+  grid-column: 3/4;
+  grid-row: 7/8;
 }
 
 .link,
 .link:visited {
   color: var(--purple);
   font-size: 1.5rem;
-  text-decoration: none!important;
+  text-decoration: none;
 }
 
 .initial{
   font-weight: bold;
   font-size: 1.5rem;
   text-decoration: none;
+  color:#fafafa;
 }
 /************ signup/login ***********/
-.container__title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
+.title__signup,
+.title__login {
+  grid-column: 3/4; 
+  grid-row: 2/3;
+  text-align: center;
+}
+.container__form {
+  grid-row: 1/8;
+  grid-column: 3/4;
 }
 
-.container__form {
-  z-index: 10;
-  min-width: 90%;
+.form__signup, .form__login {
+  max-width: 356px;
   background-color: rgba(122, 221, 196, 0.44);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin: 0 1rem;
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
-}
+  }
+
+.login {
+  grid-row: 3/6;
+ }
 
 .label {
   display: inline-block;
@@ -133,7 +153,7 @@ main {
   font-size: 1.2rem;
 }
 .input-text {
-  min-width: 300px;
+  min-width: 100%;
   line-height: 2rem;
   border-radius: 5px;
   border: none;
@@ -147,7 +167,7 @@ main {
 }
 
 .error {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #fff;
   margin: 12px;
   align-self: center;
@@ -156,17 +176,6 @@ main {
 .error-on {
   margin: 0px;
   animation: appear 1s ease-in;
-}
-
-.timebox {
-  background-color: #fafafa;
-  height: 2rem;
-  color: var(--purple);
-  font-size: 1rem;
-}
-
-.timebox:focus {
-  outline: none;
 }
 
 .container__checkbox {
@@ -190,13 +199,6 @@ main {
   background-color: var(--purple);
 }
 
-/* doesnt work?!?! */
-.input__signup {
-  align-self: center;
-  justify-self: center;
-  font-size: 1.2rem;
-}
-
 .container__button {
   margin: 30px;
   display: flex;
@@ -213,9 +215,11 @@ main {
   margin-bottom: 5rem;
 }
 /**************** randomGift  ******************/
-.container__message{
-  margin-top: 40px;
-}
+.container__message {
+  grid-column: 2/5;
+  grid-row: 2/3;
+ }
+
 .message{
   color: #fafafa;
   background-color: var(--purple);
@@ -236,19 +240,30 @@ main {
   height: 40px;
   width: 40px;
 }
+
+.link__randomGift {
+  grid-column: 2/5;
+  grid-row: 4/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 /**************** content  ******************/
 .section__content {
+  grid-column: span 5;
+  grid-row: 1/-1;
   background-color: transparent;
   padding:5px;
   display: flex;
   flex-wrap: wrap;
-  /* overflow: scroll; */
+  overflow: scroll;
   max-height: 90%;
   width: 100%;
 }
 
 .content__articles {
-  background-color:#fafafa;
+  grid-column: 1/6;
+  background-color:rgba(250, 250, 250, 0.845);
   animation: appear 1s ease-in;
   padding: 10px;
 }
@@ -290,16 +305,15 @@ main {
 }
 
 /****************** profile **********************/
-
-.container__editprofile{
-  width: 60%;
-padding-top: 30px;
- display: flex;
- justify-content: space-between;
- align-items: center;
+.button__edit {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  justify-self: center;
+  align-self: center;
 }
-
 .container__user{
+  grid-row: 2/3;
+  grid-column: 4/5;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -316,6 +330,8 @@ padding-top: 30px;
 }
 
 .container__likes{
+  grid-row: 3/4;
+  grid-column: 2/5;
   background-color: var(--lightgreen);
   height: 100px;
   min-width: 90%;
@@ -323,11 +339,28 @@ padding-top: 30px;
   font-size: 1rem;
   padding: 10px;
 }
-
+.link__logout {
+  grid-row: 4/5;
+  grid-column: 3/4;
+  justify-self: center;
+  align-self: center;
+}
+.link__delete {
+  grid-row: 5/6;
+  grid-column: 3/4;
+  justify-self: center;
+  align-self: center;
+}
 .button__edit{
   height: 50px;
   width: 80px;
 }
+
+/***************** error *****************/
+.title {
+  grid-row: 3/4;
+  grid-column: 2/5;
+ }
 
 @keyframes gift {
   0% {
@@ -349,8 +382,20 @@ padding-top: 30px;
   }
 }
 
-@media (min-width: 700px) {
-  .section__content {
-    max-width: 60%;
+@media (min-width: 500px) {
+ .container__form {
+ width: 356px;
+ }
+ .content__articles {
+   grid-column: 2/5;
+   width: 500px;
+   margin: 10px;
+   flex-grow: 1;
   }
-}
+ .container__list {
+   grid-column: 2/5;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+  }
+ }
