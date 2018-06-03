@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fac-13/allauda.svg?branch=master)](https://travis-ci.org/fac-13/allauda)
+[![Build Status](https://travis-ci.org/fac-13/alauda.svg?branch=master)](https://travis-ci.org/fac-13/allauda)
 
 # Alauda 
 ![Alauda logo](https://github.com/fac-13/allauda/blob/master/public/images/icons/icon-384x384.png)
